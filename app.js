@@ -18,16 +18,17 @@ app.post('/', (req, res) => {
     formData = req.body;
     console.log(formData);
     let writeData = JSON.stringify(formData);
-    fs.writeFileSync('../storage.json', writeData);
-    res.redirect('/results'); 
+    fs.writeFileSync('./storage.json', writeData, {"flags": "a+" });
+    res.redirect('/new-entry'); 
 }); 
 
 //use this to transfer data from my form to the json object. there should be a redirect in this route to prevent resubmission.
 
 app.get('/new-entry', (req, res) => {
-    let rawData = fs.readFileSync('../storage.json');
+    let rawData = fs.readFileSync('./storage.json');
     let output = JSON.parse(rawData);
     console.log(output);
+    res.send("success");
 });
 
 //this route is for retrieving data from the big storage.json and displaying it to the user
