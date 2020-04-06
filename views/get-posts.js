@@ -32,6 +32,4 @@ function displayPost(arrayIndex, arrayUser, arrayPost ) {
 }
 
     })
-
-
 });
