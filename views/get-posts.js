@@ -52,6 +52,4 @@ function displayPost(arrayIndex, arrayUser, arrayPost, arrayImage ) {
 }
 
     })
-
-
 });
