@@ -16,3 +16,6 @@ o	id
 	comments
 	gifs
 	emojis
+
+# Extra Feature Ideas:
+- once you're post goes over the character limit - give the user an alert
