@@ -11,9 +11,13 @@ app.use(express.static('public'));
 app.use(express.static('views'));
 
 
-var obj = {posts : []};
-json = JSON.stringify(obj);
-fs.writeFileSync('storage.json', json);
+fs.readFile('storage.json', 'utf8', function setObjCallback(err,data){
+    if (err){
+        console.log(err);
+    } else {
+        obj = JSON.parse(data);
+        return obj;
+    }});
 
 
 app.get('/', (req, res) => {
