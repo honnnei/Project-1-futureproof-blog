@@ -20,7 +20,7 @@ $( document ).ready(function() {
 function displayPost(arrayIndex, arrayUser, arrayPost ) {
     let id = arrayIndex.toString();
     console.log(id);
-    $("#blogDisplay").append(`<div id=${id}></div>`);
+    $("#blogDisplay").append(`<div class="post_div" id=${id}></div>`);
     $(`#${id}`).append(`<div class="user_name"></div>`);
     $(`#${id} .user_name`).html(`${arrayUser}`);
     $(`#${id}`).append(`<div class="user_post"></div>`);
