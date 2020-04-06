@@ -8,6 +8,13 @@ const PORT = process.env.PORT || 4001;
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
+app.use(express.static('views'));
+
+
+var obj = {posts : []};
+obj.posts.push({blogPost:''});
+json = JSON.stringify(obj);
+fs.writeFileSync('storage.json', json);
 
 
 app.get('/', (req, res) => {
@@ -16,9 +23,20 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     formData = req.body;
+    fs.readFile('storage.json', 'utf8', function readFileCallback(err, data){
+        if (err){
+            console.log(err);
+        } else {
+        obj = JSON.parse(data); //now it an object
+        obj.posts.push(formData); //add some data
+        json = JSON.stringify(obj); //convert it back to json
+        fs.writeFileSync('storage.json', json); // write it back 
+    }});
+
     console.log(formData);
-    let writeData = JSON.stringify(formData);
-    fs.writeFileSync('./storage.json', writeData, {"flags": "a+" });
+    console.log(obj);
+    //let writeData = JSON.stringify(formData);
+    //fs.appendFileSync('./storage.json', writeData);
     res.redirect('/new-entry'); 
 }); 
 
@@ -28,9 +46,13 @@ app.get('/new-entry', (req, res) => {
     let rawData = fs.readFileSync('./storage.json');
     let output = JSON.parse(rawData);
     console.log(output);
-    res.send("success");
+    res.sendFile(path.join(__dirname, '/views/display.html'));
 });
 
+
+app.get('/get-posts', (req,res) => {
+    res.sendFile(path.join(__dirname, 'storage.json'));
+});
 //this route is for retrieving data from the big storage.json and displaying it to the user
 
 app.listen(PORT, () => {
