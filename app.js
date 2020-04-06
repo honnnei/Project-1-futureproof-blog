@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     formData = req.body;
+    console.log(formData);
     let writeData = JSON.stringify(formData);
     fs.writeFileSync('../storage.json', writeData);
     res.redirect('/results'); 
