@@ -21,11 +21,13 @@ function displayPost(arrayIndex, arrayUser, arrayPost ) {
     let id = arrayIndex.toString();
     console.log(id);
     $("#blogDisplay").append(`<div class="post_div" id=${id}></div>`);
-    $(`#${id}`).append(`<div class="user_name"></div>`);
+    $(`#${id}`).append(`<div class="user-icon"><p>&#129409;</p></div>`);
+    $(`#${id}`).append(`<div class="post_content"></div>`);
+    $(`#${id} .post_content`).append(`<div class="user_name"></div>`);
     $(`#${id} .user_name`).html(`${arrayUser}`);
-    $(`#${id}`).append(`<div class="user_post"></div>`);
+    $(`#${id} .post_content`).append(`<div class="user_post"></div>`);
     $(`#${id} .user_post`).html(`${arrayPost}`);
-    $(`#${id}`).append(`<button class="comment">Comment</button>`);
+    $(`#${id} .post_content`).append(`<button class="comment">Comment</button>`);
 
 
 
