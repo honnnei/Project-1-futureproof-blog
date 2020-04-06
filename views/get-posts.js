@@ -27,9 +27,8 @@ function displayPost(arrayIndex, arrayUser, arrayPost ) {
     $(`#${id} .user_post`).html(`${arrayPost}`);
     $(`#${id}`).append(`<button class="comment">Comment</button>`);
 
+}})
 
+$(`.post_div`).append($('<input type="button" id="comment" value="comment"/>'));
 
-}
-
-    })
 });
