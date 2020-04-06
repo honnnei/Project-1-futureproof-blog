@@ -13,5 +13,6 @@ $( document ).ready(function() {
     //   });
     $('#user').html(`${displayUsername} :`)
     $("#text").html(`${displayPosts}`);
+    
     })
   })
