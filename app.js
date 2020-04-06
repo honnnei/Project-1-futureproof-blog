@@ -12,7 +12,6 @@ app.use(express.static('views'));
 
 
 var obj = {posts : []};
-obj.posts.push({blogPost:''});
 json = JSON.stringify(obj);
 fs.writeFileSync('storage.json', json);
 
