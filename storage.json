@@ -1,1 +1,1 @@
-{"posts":[{"username":"user1","blogPost":"post1","comments":[]},{"username":"user2","blogPost":"post2","comments":[]},{"username":"user3","blogPost":"post3","comments":[]}]}
+{"posts":[{"username":"user1","blogPost":"post1","comments":[{"commentUsername":"cu1","commentContent":"c1"},{"commentUsername":"cu2","commentContent":"c2"},{"commentUsername":"cu3","commentContent":"c3"},{"commentUsername":"cu4","commentContent":"c4"}]},{"username":"user2","blogPost":"post2","comments":[]}]}
