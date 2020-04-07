@@ -1,19 +1,26 @@
 body {
+    margin:0;
+    padding:0;
     display:flex;
     flex-direction:column;
     min-height:100%;
     width:100%;
     background-color: lightblue;
-    border:2px black solid;
-    font-family: 'Roboto', sans-serif;
+    /* border:2px black solid; */
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 nav{
     display:flex;
     width:100%;
-    background-color:grey;
+    /* background-color:grey; */
+    background-color:lightblue;
     min-height:100px;
     justify-content:center;
+    margin:0;
+    padding:0;
+    /* border:2px red solid; */
 }
 
 #title{
@@ -21,7 +28,20 @@ nav{
     width:80%;
     justify-self:center;
     align-self:center;
+    justify-content:center;
     /* border:2px red solid; */
+}
+
+h1{
+    font-size:32px;
+}
+
+h2{
+    margin-bottom:8px;
+    font-size:30px;
+    color: black;
+    text-align:center;
+    margin-bottom:15px;
 }
 
 article{
@@ -37,8 +57,10 @@ form {
     display: flex;
     flex-direction: column;
     padding:10px;
-    background-color:lightgrey;
-    border:8px solid salmon;
+    background-color:lightpink;
+    /* border:8px solid salmon; */
+    /* border:8px solid lightgrey; */
+    border:2px solid grey;
     border-radius:10px;
     box-shadow: 10px 10px 5px grey;
 }
@@ -49,30 +71,34 @@ form {
     border-radius:4px;
     border: 1px solid grey;
     padding:10px;
+    font-size:18px;
 }
 
 #postSubmitButton{
     padding:10px;
     border-radius:10px;
-    background-color:salmon;
+    /* background-color:salmon; */
+    background-color:lightpink;
     
 }
 
 #postSubmitButton:hover{
     padding:10px;
     border-radius:10px;
-    background-color:rgb(233, 118, 105);
+    background-color:rgb(233, 163, 173);
     cursor:pointer;
 }
 
 textarea{
-    font-size:20px;
+    border-radius:4px;
+    border: 1px solid grey;
+    font-size:18px;
+    padding:10px;
 }
 
 p{
-    font-size:30px;
+    font-size:25px;
     padding:0;
     margin:0;
     font-weight:100%;
-    
 }

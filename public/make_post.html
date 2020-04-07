@@ -6,22 +6,22 @@
     <title>Post</title>
     <link href="post-style.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,400&display=swap" rel="stylesheet">  -->
 </head>
 <body>
 
     <nav>
-        <div id="title"><h1>Blog website!</h1></div>
+        <!-- <div id="title"><h1>Make a post!</h1></div> -->
     </nav>
 
-
     <article>
-        <h1>Write Your Post</h1>
+        <h2>Make a post!</h2>
         <form action='/' method=POST>
-            <label for="user"><p>Nickname</p></label>
+            <label for="user"><p>Nickname:</p></label>
             <input class="text-form" type="text" id="user" name ="username"> <!--add a default 'anonymous for username--> 
-            <textarea name="blogPost" id="blogPost" cols="20" rows="10" maxlength="300"> <!-- add alert for character limit-->
-            </textarea>
-            <label for="image"><p>Add an image! (Optional)</p></label>
+            <textarea name="blogPost" id="blogPost" cols="20" rows="7" maxlength="300"></textarea><!-- add alert for character limit-->
+            <label for="image"><p>Add an image! (Optional):</p></label>
             <input class="text-form" type="text" id="image" name ="image"> <!--Enter image search query for giphy--> 
             <button type="submit" id="postSubmitButton">Send Your Post</button>
         </form>
