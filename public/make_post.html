@@ -9,13 +9,15 @@
 <body>
     <h1>Write Your Post</h1>
     <form action='/' method=POST>
-        <label for="user">Nickname</label>
-        <input type="text" id="user" name ="username"> <!--add a default 'anonymous for username--> 
+        <div class="username-input">
+            <label for="user">Nickname</label>
+            <input type="text" id="user" name ="username"> <!--add a default 'anonymous for username--> 
+        </div>
         <textarea name="blogPost" id="blogPost" cols="30" rows="10" maxlength="100"> <!-- add alert for character limit-->
         </textarea>
         <label for="image">Add an image!</label>
         <input type="text" id="image" name ="image"> <!--Enter image search query for giphy--> 
-        <button type="submit" id="postSubmitButton">Send Your Post</button>
+        <button type="submit" id="postSubmitButton" class="submit-button">Send Your Post</button>
     </form>
 </body>
 </html>
