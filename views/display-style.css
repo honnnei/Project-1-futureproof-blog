@@ -4,6 +4,7 @@ body {
     justify-content: space-around;
     align-items: center;
     font-family: 'Noto Sans KR', sans-serif;
+    background-color:lightblue;
 }
 
 #blogDisplay {
@@ -11,29 +12,53 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 50%;
 }
 
 .post_div {
     display: flex;
+    flex-direction:column;
     /* justify-content: space-around; */
     height: auto;
     width: 100%;
     background-color: lightpink;
     padding: 10px;
-    
+    /* border: 5px black solid; */
+    border:2px solid grey;
+    border-radius:10px;
+    margin:10px;
 }
 
 .post_content {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 80%;
-    margin: 10px;
+    width: 100%;
+    /* margin:10px;
+    padding:5px; */
+    background-color:white;
+}
+
+.user_post_image{
+    display:flex;
+    flex-direction:row;
+    /* border:2px red solid; */
+    width:100%;
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
 .user_name {
+    display:flex;
+    width: 98%;
+    font-size:20px;
+    padding-left:20px;
+    background-color:lightblue;
+    border-bottom: grey 1px solid;
+}
+
+.some class { //please DEBUG
     background-color: white;
     width: 100%;
 
@@ -67,17 +92,41 @@ padding: 5px;
 } */
 
 .user_post {
-    background-color: white;
-    width: 100%;
+    /* background-color: white; */
+    /* display:flex; */
+    width: 70%;
+    word-wrap: break-word; 
     padding: 5px;
-    height: 100%;
+    padding-left:10px;
+    height: auto;
 }
 
+.user_image{
+    display:flex;
+    width:30%;
+    justify-content:center;
+}   
+
 .user-icon {
-    font-size:10px
+    display:flex;
+    align-items:center;
+    font-size:30px;
+    text-align:center;
 }
 
 .giphyImage{
-    height:160px;
+    display:flex;
+    justify-self:center;
+    height:200px;
+    max-width:269px;
+    border: 1px solid black;
+}
+
+.comment{
+    margin-top:8px;
+    display:flex;
+    width:15%;
+    align-self:center;
+    text-align:center;
 }
 

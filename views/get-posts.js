@@ -140,18 +140,20 @@ function displayPost(arrayIndex, arrayUser, arrayPost, arrayImage ) {
     console.log(id);
     //console.log(arrayImage);
     $("#blogDisplay").append(`<div class="post_div" id=${id}></div>`);
-    $(`#${id}`).append(`<div class="user-icon"><p>&#129409;</p></div>`);
+    // $(`#${id}`).append(`<div class="user-icon"><p>&#129409;</p></div>`);
     $(`#${id}`).append(`<div class="post_content"></div>`);
     $(`#${id} .post_content`).append(`<div class="user_name"></div>`);
-    $(`#${id} .user_name`).html(`${arrayUser}`);
-    $(`#${id} .post_content`).append(`<div class="user_post"></div>`);
+    $(`#${id} .post_content`).append(`<div class="user_post_image"></div>`);
+    $(`#${id} .user_name`).html(`&#129409 ${arrayUser}`);
+    $(`#${id} .user_post_image`).append(`<div class="user_post"></div>`);
     $(`#${id} .user_post`).html(`${arrayPost}`);
     if(arrayImage){
-        $(`#${id}`).append(`<div class="user_image"></div>`);
+        $(`#${id} .user_post_image`).append(`<div class="user_image"></div>`);
         $(`#${id} .user_image`).html(`<img class ="giphyImage" src="${arrayImage}">`); //Applied class "giphyImage" to reduce image size. Feel free to change styling.
     }
     $(`#${id}`).append(`<button class="comment">Comment</button>`);
-    $(`#${id} .post_content`).append(`<button class="comment">Comment</button>`);
+
+//     $(`#${id} .post_content`).append(`<button class="comment">Comment</button>`); - from matt-style
 }
 
 
