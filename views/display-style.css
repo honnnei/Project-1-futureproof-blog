@@ -56,8 +56,40 @@ body {
     padding-left:20px;
     background-color:lightblue;
     border-bottom: grey 1px solid;
-
 }
+
+.some class { //please DEBUG
+    background-color: white;
+    width: 100%;
+
+    border: 10px lightpink solid;
+    background-color: silver;
+}
+
+/* 2 form classes below: */
+
+.comment-container-show {
+    display: flex;
+    flex-direction: column;
+}
+.comment-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_div {
+    display: none;
+}
+
+.form_div_show {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*    this got lost in the branches merge!!!
+padding: 5px; 
+} */
 
 .user_post {
     /* background-color: white; */
@@ -97,5 +129,4 @@ body {
     align-self:center;
     text-align:center;
 }
-
 
