@@ -24,7 +24,14 @@ body {
     background-color: silver;
 }
 
-.comment-container{
-    display:flex;
+/* 2 form classes below: */
+
+.comment-container-show {
+    display: flex;
     flex-direction: column;
 }
+.comment-container {
+    display: none;
+    flex-direction: column;
+}
+
