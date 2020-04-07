@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 #blogDisplay {
@@ -10,19 +11,47 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
+    width: 100%;
 }
 
 .post_div {
     display: flex;
+    /* justify-content: space-around; */
+    height: auto;
+    width: 100%;
+    background-color: lightpink;
+    padding: 10px;
+    
+}
+
+.post_content {
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 200px;
-    width: 100%;
-    border: 10px lightpink solid;
-    background-color: silver;
+    width: 80%;
+    margin: 10px;
 }
+
+.user_name {
+    background-color: white;
+    width: 100%;
+    padding: 5px; 
+}
+
+.user_post {
+    background-color: white;
+    width: 100%;
+    padding: 5px;
+    height: 100%;
+}
+
+.user-icon {
+    font-size:10px
+}
+
 .giphyImage{
     height:160px;
 }
+
+
