@@ -36,8 +36,35 @@ body {
 .user_name {
     background-color: white;
     width: 100%;
-    padding: 5px; 
+
+    border: 10px lightpink solid;
+    background-color: silver;
 }
+
+/* 2 form classes below: */
+
+.comment-container-show {
+    display: flex;
+    flex-direction: column;
+}
+.comment-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_div {
+    display: none;
+}
+
+.form_div_show {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*    this got lost in the branches merge!!!
+padding: 5px; 
+} */
 
 .user_post {
     background-color: white;
@@ -53,5 +80,4 @@ body {
 .giphyImage{
     height:160px;
 }
-
 
