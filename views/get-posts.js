@@ -133,7 +133,7 @@ function makeAGiphy() {
             else{
                 displayPost(index, postUser, postContent);
             }
-    });
+    }
      
 function displayPost(arrayIndex, arrayUser, arrayPost, arrayImage ) {
     let id = arrayIndex.toString();
