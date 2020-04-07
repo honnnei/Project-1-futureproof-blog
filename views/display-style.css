@@ -31,7 +31,16 @@ body {
     flex-direction: column;
 }
 .comment-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_div {
     display: none;
+}
+
+.form_div_show {
+    display: flex;
     flex-direction: column;
 }
 
