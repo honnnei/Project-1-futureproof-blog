@@ -5,17 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post</title>
     <link href="post-style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <h1>Write Your Post</h1>
-    <form action='/' method=POST>
-        <label for="user">Nickname</label>
-        <input type="text" id="user" name ="username"> <!--add a default 'anonymous for username--> 
-        <textarea name="blogPost" id="blogPost" cols="30" rows="10" maxlength="100"> <!-- add alert for character limit-->
-        </textarea>
-        <label for="image">Add an image!</label>
-        <input type="text" id="image" name ="image"> <!--Enter image search query for giphy--> 
-        <button type="submit" id="postSubmitButton">Send Your Post</button>
-    </form>
+
+    <nav>
+        <div id="title"><h1>Blog website!</h1></div>
+    </nav>
+
+
+    <article>
+        <h1>Write Your Post</h1>
+        <form action='/' method=POST>
+            <label for="user"><p>Nickname</p></label>
+            <input class="text-form" type="text" id="user" name ="username"> <!--add a default 'anonymous for username--> 
+            <textarea name="blogPost" id="blogPost" cols="20" rows="10" maxlength="300"> <!-- add alert for character limit-->
+            </textarea>
+            <label for="image"><p>Add an image! (Optional)</p></label>
+            <input class="text-form" type="text" id="image" name ="image"> <!--Enter image search query for giphy--> 
+            <button type="submit" id="postSubmitButton">Send Your Post</button>
+        </form>
+    </article>
 </body>
 </html>
