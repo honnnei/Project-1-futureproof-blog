@@ -6,6 +6,7 @@
     <title>Post</title>
     <link href="post-style.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> 
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -19,12 +20,12 @@
         <form action='/' method=POST>
             <label for="user"><p>Nickname</p></label>
             <input class="text-form" type="text" id="user" name ="username"> <!--add a default 'anonymous for username--> 
-            <textarea name="blogPost" id="blogPost" cols="20" rows="10" maxlength="300"> <!-- add alert for character limit-->
-            </textarea>
+            <textarea name="blogPost" id="blogPost" cols="20" rows="10" maxlength="10"></textarea>
             <label for="image"><p>Add an image! (Optional)</p></label>
             <input class="text-form" type="text" id="image" name ="image"> <!--Enter image search query for giphy--> 
             <button type="submit" id="postSubmitButton">Send Your Post</button>
         </form>
     </article>
+    <script src="post-script.js"></script>
 </body>
 </html>
