@@ -1,12 +1,4 @@
 body {
-<<<<<<< HEAD
-    background-color: lightpink;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    font-family: 'Noto Sans KR', sans-serif;
-=======
     display:flex;
     flex-direction:column;
     min-height:100%;
@@ -39,51 +31,11 @@ article{
     flex-direction:column;
     align-self:center;
     /* border:2px red solid; */
->>>>>>> d1621eae65c1cb3bd7dfd22deea9ca601e82e985
 }
 
 form {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
-    align-items: center;
-    width: 60%;
-}
-
-.username-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 15px;
-}
-
-#user {
-    margin-left: 10px;
-}
-
-textarea {
-    display: flex;
-    width: 400px;
-    height: 200px;
-    border: 2px solid plum;
-    border-radius: 5px;
-    background-color: white;
-}
-
-button {
-    color: white;
-    background-color: black;
-    font-size: 15px;
-    border-radius: 10px;
-}
-
-
-.submit-button:hover {
-    background-color: white;
-    color: black;
-}
-
-=======
     padding:10px;
     background-color:lightgrey;
     border:8px solid salmon;
@@ -124,4 +76,10 @@ p{
     font-weight:100%;
     
 }
->>>>>>> d1621eae65c1cb3bd7dfd22deea9ca601e82e985
+
+button {
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 7px black; 
+}

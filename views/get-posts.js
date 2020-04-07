@@ -42,11 +42,13 @@ $( document ).ready(function() {
      
 function displayPost(arrayIndex, arrayUser, arrayPost, arrayImage ) {
     let id = arrayIndex.toString();
+    const userIcon = `<div class="user-icon"><p>&#129409;</p></div>`;
     console.log(id);
     //console.log(arrayImage);
     $("#blogDisplay").append(`<div class="post_div" id=${id}></div>`);
-    $(`#${id}`).append(`<div class="user-icon"><p>&#129409;</p></div>`);
+    // $(`#${id}`).append(`<div class="user-icon"><p>&#129409;</p></div>`);
     $(`#${id}`).append(`<div class="post_content"></div>`);
+    $(`#${id} .user_name`).prepend(userIcon);
     $(`#${id} .post_content`).append(`<div class="user_name"></div>`);
     $(`#${id} .user_name`).html(`${arrayUser}`);
     $(`#${id} .post_content`).append(`<div class="user_post"></div>`);

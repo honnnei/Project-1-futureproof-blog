@@ -1,9 +1,18 @@
+header {
+    display: flex;
+    padding: 40px;
+    color: black;
+    width: 100%;
+    justify-content: center;
+}
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     font-family: 'Noto Sans KR', sans-serif;
+    background-color: lightblue;
 }
 
 #blogDisplay {
@@ -11,19 +20,21 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 50%;
+    width: 70%;
+    overflow: scroll;
 }
 
 .post_div {
     display: flex;
+    justify-content: row;
     /* justify-content: space-around; */
     height: auto;
-    width: 100%;
+    width: 90%;
     background-color: lightpink;
-    padding: 10px;
-    border: 5px black solid;
+    /* padding: 10px; */
     border-radius:10px;
     margin:10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
 .post_content {
@@ -33,32 +44,55 @@ body {
     align-items: center;
     width: 80%;
     margin: 10px;
+    border-radius: 5px;
 }
 
 .user_name {
     background-color: white;
     width: 100%;
     padding: 5px; 
-    font-size:20px;
+    font-size: 10px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-radius: 4px;
 }
 
 .user_post {
     background-color: white;
-    width: 100%;
     padding: 5px;
     height: 100%;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 4px;
+
 }
 
 .user-icon {
     display:flex;
-    align-items:center;
+    align-items: flex-start;
     font-size:30px;
     text-align:center;
+    padding: 10px;
+}
 
+p {
+    display:flex;
+    align-items: flex-start;
+    font-size:30px;
+    text-align:center;
+    padding: 10px;
 }
 
 .giphyImage{
     height:160px;
+    padding: 10px;
 }
 
-
+button {
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px black; 
+    padding: 10px;
+    margin-top: 15px;
+}
