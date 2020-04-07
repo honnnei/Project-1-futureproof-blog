@@ -10,7 +10,7 @@ $( document ).ready(function() {
             let index = blogArray.indexOf(element);
             let postUser = element.username;
             let postContent = element.blogPost;
-            let commentsPresent = element.comments.commentContent;
+            let commentsPresent = element.comments[0];
             
             if (!commentsPresent) {
             
@@ -19,17 +19,20 @@ $( document ).ready(function() {
             } else {
                 let arrayOfComments = element.comments;
                 let numberOfComments = arrayOfComments.length;
-                console.log(numberOfComments);
-                let postCommentUserName = element.comments[0].commentUser;
-                let postCommentContent = element.comments[0].commentContent;
-                displayPostWithComment(index, postUser, postContent, postCommentUserName, postCommentContent, numberOfComments );
-                console.log('comments');
+                displayedComments = arrayOfComments.map(comment => {
+                    let commentIndex = arrayOfComments.indexOf(comment);
+                    let postCommentUserName = element.comments[commentIndex].commentUsername;
+                    let postCommentContent = element.comments[commentIndex].commentContent;
+                    displayPostWithComment(index, commentIndex, postUser, postContent, postCommentUserName, postCommentContent, numberOfComments );
+                    console.log('comments');
+                })
             }
 
         });
      
-        function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentUser, commentValue, commentNumber) {
+        function displayPostWithComment(arrayIndex, commentIndex, arrayUser, arrayPost, commentUser, commentValue, commentNumber) {
             let id = arrayIndex.toString();
+            let commentId = commentIndex.toString();
             console.log(id);
             $("#blogDisplay").append(`<div class="post_div" id=${id}></div>`);
             $(`#${id}`).append(`<div class="user_name"></div>`);
@@ -41,17 +44,21 @@ $( document ).ready(function() {
                 $(`#${id}.post_div`).append(`<form action="/comment/${id}" method="POST" class="comment-container"><label for = "usernamebox">Username</label><input name="commentUsername" type="text" class="usernamebox"/><label for = "commentbox">Comment here</label><input name="commentContent" type="textarea" class="commentbox"/><button type = "submit">Submit</button></form>`);
 
             });
-
-            for (i = 0; i < commentNumber; i++) {
-                $(`#${id}`).append(`<div class="comment_section">Hi</div>`);
-                $(`#${id} .comment_section`).append(`<div class="comment_username"></div>`);
-                $(`#${id} .comment_username`).html(`${commentUser}`);
-                $(`#${id} .comment_section`).append(`<div class="comment_content"></div>`);
-                $(`#${id} .comment_content`).html(`${commentValue}`);
-            }
-            
-            
-
+            {
+            if (commentIndex === 0) { 
+                $(`#${id}`).append(`<div id=${commentId}  class="comment_section"></div>`);
+                $(`#${id} .comment_section`).append(`<div id=${commentId} class="comment_container"></div>`);
+                $(`#${commentId} .comment_container`).append(`<div class="comment_username"></div>`);
+                $(`#${commentId} .comment_username`).html(`${commentUser}`);
+                $(`#${commentId} .comment_container`).append(`<div class="comment_content"></div>`);
+                $(`#${commentId} .comment_content`).html(`${commentValue}`);
+            } else {
+                $(`#${commentId}`).append(`<div class="comment_container"></div>`);
+                $(`#${commentId} .comment_container`).append(`<div class="comment_username"></div>`);
+                $(`#${commentId} .comment_username`).html(`${commentUser}`);
+                $(`#${commentId} .comment_container`).append(`<div class="comment_content"></div>`);
+                $(`#${commentId} .comment_content`).html(`${commentValue}`);
+            }}
         }
 
         function displayPostNoComment(arrayIndex, arrayUser, arrayPost) {
