@@ -32,31 +32,32 @@ $( document ).ready(function() {
      
         function displayPostWithComment(arrayIndex, commentIndex, arrayUser, arrayPost, commentUser, commentValue, commentNumber) {
             let id = arrayIndex.toString();
-            let commentId = commentIndex.toString();
+            let thisWillBeCommentId = commentIndex.toString();
+            let commentId = id + thisWillBeCommentId;
             console.log(id);
-            $("#blogDisplay").append(`<div class="post_div" id=${id}></div>`);
-            $(`#${id}`).append(`<div class="user_name"></div>`);
-            $(`#${id} .user_name`).html(`${arrayUser}`);
-            $(`#${id}`).append(`<div class="user_post"></div>`);
-            $(`#${id} .user_post`).html(`${arrayPost}`);
-            $(`#${id}`).append(`<button class="comment">Comment</button>`);
-            $(`#${id} .comment`).on('click', function() {
-                $(`#${id}.post_div`).append(`<form action="/comment/${id}" method="POST" class="comment-container"><label for = "usernamebox">Username</label><input name="commentUsername" type="text" class="usernamebox"/><label for = "commentbox">Comment here</label><input name="commentContent" type="textarea" class="commentbox"/><button type = "submit">Submit</button></form>`);
+            $("#blogDisplay").append(`<div class="post_div" id=${id}><div class="post_section"></div></div>`);
+            $(`#${id} .post_section`).append(`<div class="user_name"></div>`);
+            $(`#${id} .post_section .user_name`).html(`${arrayUser}`);
+            $(`#${id} .post_section`).append(`<div class="user_post"></div>`);
+            $(`#${id} .post_section .user_post`).html(`${arrayPost}`);
+            $(`#${id} .post_section`).append(`<button class="comment">Comment</button>`);
+            $(`#${id} .post_section .comment`).on('click', function() {
+                $(`#${id} .post_section .post_div`).append(`<form action="/comment/${id}" method="POST" class="comment-container"><label for = "usernamebox">Username</label><input name="commentUsername" type="text" class="usernamebox"/><label for = "commentbox">Comment here</label><input name="commentContent" type="textarea" class="commentbox"/><button type = "submit">Submit</button></form>`);
 
             });
             {
             if (commentIndex === 0) { 
-                $(`#${id}`).append(`<div id=${commentId}  class="comment_section"></div>`);
+                $(`#${id}`).append(`<div class="comment_section"></div>`);
                 $(`#${id} .comment_section`).append(`<div id=${commentId} class="comment_container"></div>`);
-                $(`#${commentId} .comment_container`).append(`<div class="comment_username"></div>`);
+                $(`#${commentId}`).append(`<div class="comment_username"></div>`);
                 $(`#${commentId} .comment_username`).html(`${commentUser}`);
-                $(`#${commentId} .comment_container`).append(`<div class="comment_content"></div>`);
+                $(`#${commentId}`).append(`<div class="comment_content"></div>`);
                 $(`#${commentId} .comment_content`).html(`${commentValue}`);
             } else {
-                $(`#${commentId}`).append(`<div class="comment_container"></div>`);
-                $(`#${commentId} .comment_container`).append(`<div class="comment_username"></div>`);
+                $(`#${id} .comment_section`).append(`<div id=${commentId} class="comment_container"></div>`);
+                $(`#${commentId}`).append(`<div class="comment_username"></div>`);
                 $(`#${commentId} .comment_username`).html(`${commentUser}`);
-                $(`#${commentId} .comment_container`).append(`<div class="comment_content"></div>`);
+                $(`#${commentId}`).append(`<div class="comment_content"></div>`);
                 $(`#${commentId} .comment_content`).html(`${commentValue}`);
             }}
         }
