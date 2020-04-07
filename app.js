@@ -34,6 +34,8 @@ app.post('/', (req, res) => {
             console.log(err);
         } else {
         obj = JSON.parse(data); //now it an object
+        let commentArray = [];
+        formData.comments = commentArray;
         obj.posts.push(formData); //add some data
         json = JSON.stringify(obj); //convert it back to json
         fs.writeFileSync('storage.json', json); // write it back 
@@ -49,7 +51,8 @@ app.post('/', (req, res) => {
 // //creating a new comment:
 
 app.post('/comment/:postIndex', (req, res) => {
-    let postArrayIndex = parseInt(req.params.postIndex); //works
+    let postArrayId = parseInt(req.params.postIndex); //works
+    let postArrayIndex = postArrayId; // -1 
     console.log(req.params);
     console.log(req.body);
     let commentData = req.body;
@@ -58,8 +61,13 @@ app.post('/comment/:postIndex', (req, res) => {
         if (err){
             console.log(err);
         } else {
+        // commentObj = JSON.parse(data); 
+        // commentObj.posts[postArrayIndex].comments = commentData;
+        // console.log(commentObj.posts[postArrayIndex].comments);
+        // let commentArray = [];
         commentObj = JSON.parse(data); 
-        commentObj.posts[postArrayIndex].comments = commentData;
+        // commentObj.posts[postArrayIndex].comments = commentArray;
+        commentObj.posts[postArrayIndex].comments.push(commentData);
         console.log(commentObj.posts[postArrayIndex].comments);
         
         // //now it an object
