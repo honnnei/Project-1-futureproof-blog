@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-
     axios.get('/get-posts').then(response => {
         console.log(response);
         // displayPosts = response.data.posts[0].blogPost;
@@ -26,9 +25,14 @@ function displayPost(arrayIndex, arrayUser, arrayPost ) {
     $(`#${id}`).append(`<div class="user_post"></div>`);
     $(`#${id} .user_post`).html(`${arrayPost}`);
     $(`#${id}`).append(`<button class="comment">Comment</button>`);
+    $(`#${id} .comment`).on('click', function() {
+        $(`#${id}.post_div`).append('<form class="comment-container"><label for = "usernamebox">Username</label><input type="text" class="usernamebox"/><label for = "commentbox">Comment here</label><input type="textarea" class="commentbox"/><button type = "submit">Submit</button></form>');
+    });
+    
 
 }})
 
-$(`.post_div`).append($('<input type="button" id="comment" value="comment"/>'));
+// $(`.comment`).append($('<input type="button" id="comment" value="comment"/>'));
+// $(`.post_div`).delegate('#comment', 'click', append($('input type="textarea" id="commentbox" value="commentbox"/>')))
 
 });

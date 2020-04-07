@@ -23,3 +23,8 @@ body {
     border: 10px lightpink solid;
     background-color: silver;
 }
+
+.comment-container{
+    display:flex;
+    flex-direction: column;
+}
