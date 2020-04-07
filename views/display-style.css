@@ -65,6 +65,7 @@ body {
     width: 70%;
     word-wrap: break-word; 
     padding: 5px;
+    padding-left:10px;
     height: auto;
 }
 
