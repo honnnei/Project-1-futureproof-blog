@@ -28,10 +28,10 @@ $(document).ready(function () {
                 .then(imageUrl => {
 
                     if (!commentsPresent) {
-                        displayPostNoComment(index, postUser, postContent, imageUrl, postDate);
+                        displayPostNoComment(index, postUser, postContent, postDate, imageUrl);
                     } else {
                         let arrayOfComments = element.comments;
-                        displayPostWithComment(index, postUser, postContent, arrayOfComments, element, imageUrl, postDate);
+                        displayPostWithComment(index, postUser, postContent, arrayOfComments, element, postDate, imageUrl);
                     }
                 })                 //Had trouble with async. displayPost() must be here to ensure image is returned
                    
@@ -41,10 +41,10 @@ $(document).ready(function () {
                 });
             } else { //calling display function if no giphy:
                 if (!commentsPresent) {
-                    displayPostNoComment(index, postUser, postContent);
+                    displayPostNoComment(index, postUser, postContent, postDate);
                 } else {
                     let arrayOfComments = element.comments;
-                    displayPostWithComment(index, postUser, postContent, arrayOfComments, element);
+                    displayPostWithComment(index, postUser, postContent, arrayOfComments, element, postDate);
                 }
             }
 
@@ -52,7 +52,7 @@ $(document).ready(function () {
         }); //array map close
     }); //axios close
 
-    function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayImage, arrayDate ) {
+    function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayDate, arrayImage) {
         //taken out of the function arguments: commentIndex, commentUser, commentValue, commentNumber
         let id = arrayIndex.toString();
         //displaying the post:
@@ -115,7 +115,7 @@ $(document).ready(function () {
         $(`#${commentId} .comment_content`).html(`${contentOfComment}`);   
     }
 
-    function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayImage, arrayDate) {
+    function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayDate, arrayImage) {
         let id = arrayIndex.toString();
         console.log(id);
 
