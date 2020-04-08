@@ -175,7 +175,7 @@ function displayEmojiReacts(index) {
     let neutralCount = 0;
     let poopCount = 0;
 
-    $(`#${id}`).append(`<div id=${bigEmojiDiv} class="emojicontainer"></div>`);
+    $(`#${id} .post_section`).append(`<div id=${bigEmojiDiv} class="emojicontainer"></div>`);
         $(`#${bigEmojiDiv}`).append(`<div id=group1${id} class="emojigroup"></div>`);
             $(`#group1${id}`).append(`<div id=laughing${id} class="laughing">🤣</div>`);
             $(`#group1${id}`).append(`<div id=laughingCounter${id} class="counter">0</div>`);

@@ -125,6 +125,7 @@ footer {
     /* border: 1px solid black; */
 }
 
+
 .comment_container{
     margin:5px 0px;
     border: 1px solid grey;
@@ -202,12 +203,14 @@ padding: 5px;
 
 .comment{
     margin-top:8px;
-    display:flex;
+    display: inline-flex;
     width:15%;
     align-self:center;
     text-align:center;
+    margin-right: 35%;
 }
 
 .emojicontainer {
-    display: flex;
+    display: inline-flex;
+    margin-left: 35%;
 }
