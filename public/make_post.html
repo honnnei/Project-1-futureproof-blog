@@ -25,8 +25,8 @@
         <h2>Make a post!</h2>
         <form action='/' method=POST>
             <label for="user"><p>Nickname:</p></label>
-            <input class="text-form" type="text" id="user" name ="username"> <!--add a default 'anonymous for username--> 
-            <textarea name="blogPost" id="blogPost" cols="20" rows="7" maxlength="100" spellcheck="true" style="outline: none; user-select: text; white-space: pre-wrap; overflow-wrap: break-word;"></textarea><!-- coppied most of these properties from twitter new tweet box not sure if all of them work-->
+            <input class="text-form" type="text" id="user" name ="username" required> <!--add a default 'anonymous for username--> 
+            <textarea required name="blogPost" id="blogPost" cols="20" rows="7" maxlength="100" spellcheck="true" style="outline: none; user-select: text; white-space: pre-wrap; overflow-wrap: break-word;"></textarea><!-- coppied most of these properties from twitter new tweet box not sure if all of them work-->
             <div id="characterAlert" class="characterAlert"><p>You Have Reached the Character Limit of 100.</p></div>
             <label for="image"><p>Add an image! (Optional):</p></label>
             <input class="text-form" type="text" id="image" name ="image"> <!--Enter image search query for giphy--> 
