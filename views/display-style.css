@@ -67,6 +67,9 @@ footer {
     width: 100%;
     background-color: lightpink;
     padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+
     border:2px solid grey;
     border-radius:10px;
     margin:10px;
@@ -85,7 +88,6 @@ footer {
     justify-content: center;
     align-items: center;
     width: 100%;
-
     background-color:white;
 }
 
@@ -97,6 +99,7 @@ footer {
     width:100%;
     padding-top:10px;
     padding-bottom:10px;
+    border: 1px solid grey;
 }
 
 .user_name {
@@ -104,7 +107,7 @@ footer {
     font-size:20px;
     padding-left:20px;
     background-color:lightblue;
-    border-bottom: grey 1px solid;
+    border: grey 1px solid;
 }
 
 /* .some class { //please DEBUG
