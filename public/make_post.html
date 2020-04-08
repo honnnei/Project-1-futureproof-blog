@@ -51,6 +51,35 @@
             $("#characterAlert").hide();
         }
     });
+
+    let charactersCounter = 0;
+    $('#blogPost').on('keydown', function(e){
+    // get keycode of current keypress event
+    var code = (e.keyCode || e.which);
+    
+        if ((code > 31) && (code < 126) && (code != 37) && (code != 38) && (code != 39) && (code != 40) && (code != 46) && (code != 93))  {
+            charactersCounter += 1;
+            console.log(charactersCounter);
+        } else if ((code === 219) || (code === 221) || (code === 222) || (code === 186) || (code === 192) || (code === 188) || (code === 190) || (code === 191)) {
+            charactersCounter += 1;
+            console.log(charactersCounter);
+        } else if ((code === 8) && (charactersCounter > 0)) {
+            charactersCounter -= 1;
+            console.log(charactersCounter);
+        }
+           
+         
+        //  || (code === 219) || (code === 221) || (code === 222) || (code === 186) || (code === 192) || (code === 188) || (code === 190) || (code === 191))
+
+        
+    // do nothing if it's an arrow key
+    // if(code == 37 || code == 38 || code == 39 || code == 40) {
+    //     return;
+    // }
+
+    // do normal behaviour for any other key
+    // $('#search-items #autocom').fadeIn();
+});
     // $( "#blogPost" ).keyup(function() {
     // console.log(this.value.length);
     // });
