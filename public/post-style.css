@@ -62,9 +62,13 @@ footer {
     /* border:2px red solid; */
 }
 
-h1{
-    font-size:2.5rem;
+/*Uncomment these headings for inverted colours*/
 
+/* h1{
+    font-size:2.5rem;
+    font-family: 'Pacifico', cursive;
+    color:black;
+    text-shadow: -3px 0 lightpink, 0 3px lightpink, 3px 0 lightpink, 0 -3px lightpink;
 }
 
 h2{
@@ -73,7 +77,30 @@ h2{
     color: black;
     text-align:center;
     margin-bottom:15px;
+    font-family: 'Pacifico', cursive;
+    color:black;
+    text-shadow: -3px 0 lightpink, 0 3px lightpink, 3px 0 lightpink, 0 -3px lightpink;
+} */
+
+h1{
+    font-size:2.5rem;
+    font-family: 'Pacifico', cursive;
+    color:lightpink;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
+ h2{
+    margin-bottom:8px;
+    font-size:30px;
+    color: black;
+    text-align:center;
+    margin-bottom:15px;
+    font-family: 'Pacifico', cursive;
+    color:lightpink;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
 
 article{
     display:flex;
