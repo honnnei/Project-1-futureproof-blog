@@ -88,7 +88,6 @@ $(document).ready(function () {
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
-                                <input id="date" name="date">
                                 <label for = "usernamebox">Username</label>
                                 <input name="commentUsername" type="text" class="usernamebox"/>
                                 <label for = "commentbox">Comment here</label>
@@ -154,7 +153,7 @@ $(document).ready(function () {
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
-                                <input id="date" name="date">
+                                
                                 <label for = "usernamebox">Username</label>
                                 <input name="commentUsername" type="text" class="usernamebox"/>
                                 <label for = "commentbox">Comment here</label>
