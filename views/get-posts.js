@@ -82,8 +82,9 @@ $(document).ready(function () {
                     <div class="post_section">
                         <div class="post_date"></div>
                         <div class="user_name"></div>
-                        <div class="user_post"></div>
-                        <div class="user_post_image"></div>
+                        <div class="user_post_image">
+                            <div class="user_post"></div>
+                        </div>
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
@@ -147,8 +148,9 @@ $(document).ready(function () {
                     <div class="post_section">
                         <div class="post_date"></div>
                         <div class="user_name"></div>
-                        <div class="user_post"></div>
-                        <div class="user_post_image"></div>
+                        <div class="user_post_image">
+                            <div class="user_post"></div>
+                        </div>
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
