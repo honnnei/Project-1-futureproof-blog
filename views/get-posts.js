@@ -159,7 +159,7 @@ $(document).ready(function () {
                                 <input name="commentUsername" type="text" class="usernamebox"/>
                                 <label for = "commentbox">Comment here</label>
                                 <input name="commentContent" type="textarea" class="commentbox"/>
-                                <button type = "submit">Submit</button>
+                                <button type = "submit" class="submit">Submit</button>
                             </form>
                         </div>
                     </div>
