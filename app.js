@@ -35,6 +35,16 @@ app.post('/', (req, res) => {
         } else {
         obj = JSON.parse(data); //now it an object
         let commentArray = [];
+        //adding a date stamp:
+        var thisDate = new Date();
+        var day = thisDate.getDate();
+        var month = thisDate.getMonth() + 1;
+        var year = thisDate.getFullYear();
+        if (month < 10) month = "0" + month;
+        if (day < 10) day = "0" + day;
+        var today = year + "-" + month + "-" + day;
+        formData.date = today;
+        //adding an array for comments:
         formData.comments = commentArray;
         obj.posts.push(formData); //add some data
         json = JSON.stringify(obj); //convert it back to json

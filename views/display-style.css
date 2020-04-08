@@ -72,6 +72,12 @@ footer {
     margin:10px;
 }
 
+.post_date {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+}
+
 .post_content {
     display: flex;
     flex-direction: column;
