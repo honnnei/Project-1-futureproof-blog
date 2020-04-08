@@ -214,3 +214,14 @@ padding: 5px;
     display: inline-flex;
     margin-left: 35%;
 }
+
+.emojigroup {
+    padding: 1px;
+    margin: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+
+}
