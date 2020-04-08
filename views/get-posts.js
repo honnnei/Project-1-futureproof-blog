@@ -146,6 +146,7 @@ $(document).ready(function () {
         $(`#${id} .comment`).on('click', function () {
             $(`#${id} .form_div`).toggle();
         });
+        
         if(arrayImage){
             console.log(arrayImage);
             $(`#${id} .user_post_image`).append(`<div class="user_image"></div>`);

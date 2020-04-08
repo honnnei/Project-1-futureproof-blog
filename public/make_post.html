@@ -26,7 +26,7 @@
         <form action='/' method=POST>
             <label for="user"><p>Nickname:</p></label>
             <input class="text-form" type="text" id="user" name ="username"> <!--add a default 'anonymous for username--> 
-            <textarea name="blogPost" id="blogPost" cols="20" rows="7" maxlength="300"></textarea><!-- add alert for character limit-->
+            <textarea name="blogPost" id="blogPost" cols="20" rows="7" maxlength="140"></textarea><!-- add alert for character limit-->
             <label for="image"><p>Add an image! (Optional):</p></label>
             <input class="text-form" type="text" id="image" name ="image"> <!--Enter image search query for giphy--> 
             <button type="submit" id="postSubmitButton">Send Your Post</button>
@@ -36,5 +36,13 @@
     <footer>
         This is a footer.
     </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script>
+    $( "#blogPost" ).on('input', function() {
+        if ($(this).val().length>=100) {
+            alert('you have reached a limit of 100');       
+        }
+    });
+    </script>
 </body>
 </html>
