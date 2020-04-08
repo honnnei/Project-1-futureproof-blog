@@ -112,6 +112,18 @@ form {
     align-items: center;
 }
 
+.charactersCounterDisplayed {
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.charactersCounterDisplayed p {
+    font-size: 12px;
+    color: rgb(20, 20, 78);
+}
+
 #characterAlert p {
     font-size: 12px;
     color: rgb(20, 20, 78);
