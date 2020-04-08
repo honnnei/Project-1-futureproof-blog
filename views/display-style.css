@@ -95,7 +95,6 @@ footer {
 
 .user_name {
     display:flex;
-    /* width: 98%; */
     font-size:20px;
     padding-left:20px;
     background-color:lightblue;
@@ -125,7 +124,6 @@ footer {
 
 .comment_username{
     display:flex;
-    width: 98%;
     font-size:20px;
     padding-left:20px;
     background-color:lightblue;
