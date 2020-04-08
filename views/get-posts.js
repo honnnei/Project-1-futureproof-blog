@@ -176,6 +176,9 @@ $(document).ready(function () {
             $(`#${id} .user_post_image`).append(`<div class="user_image"></div>`);
             $(`#${id} .user_image`).html(`<img class ="giphyImage" src="${arrayImage}">`); //Applied class "giphyImage" to reduce image size. Feel free to change styling.
         }
+        else{
+            $(`#${id} .user_post`).css("width", "100%");
+        }
 
     }
 
