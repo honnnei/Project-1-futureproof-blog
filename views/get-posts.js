@@ -7,6 +7,7 @@ $(document).ready(function () {
             let index = blogArray.indexOf(element);
             let postUser = element.username;
             let postContent = element.blogPost;
+            let postDate = element.date;
             let giphyQuery = element.image; //if there is giphy input
             console.log(giphyQuery); //this works
             let commentsPresent = element.comments[0];
@@ -28,11 +29,11 @@ $(document).ready(function () {
 
                     if (!commentsPresent) {
 //emoji starts:
-                        displayPostNoComment(index, postUser, postContent, imageUrl);
+                        displayPostNoComment(index, postUser, postContent, postDate, imageUrl);
                         displayEmojiReacts(index);
                     } else {
                         let arrayOfComments = element.comments;
-                        displayPostWithComment(index, postUser, postContent, arrayOfComments, element, imageUrl);
+                        displayPostWithComment(index, postUser, postContent, arrayOfComments, element, postDate, imageUrl);
                         displayEmojiReacts(index);
 //this was on master before meoji:
 //                         displayPostNoComment(index, postUser, postContent, postDate, imageUrl);
@@ -50,11 +51,11 @@ $(document).ready(function () {
             } else { //calling display function if no giphy:
                 if (!commentsPresent) {
 //emoji starts:
-                    displayPostNoComment(index, postUser, postContent);
+                    displayPostNoComment(index, postUser, postContent, postDate);
                     displayEmojiReacts(index);
                 } else {
                     let arrayOfComments = element.comments;
-                    displayPostWithComment(index, postUser, postContent, arrayOfComments, element);
+                    displayPostWithComment(index, postUser, postContent, arrayOfComments, element, postDate);
                     displayEmojiReacts(index);
 //this was on master before meoji:
 //                     displayPostNoComment(index, postUser, postContent, postDate);
@@ -69,7 +70,7 @@ $(document).ready(function () {
     }); //axios close
 
 //emoji starts:
-    function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayImage ) {
+    function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayDate, arrayImage ) {
 //this was on master before meoji:
 //     function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayDate, arrayImage) {
 
@@ -79,12 +80,14 @@ $(document).ready(function () {
         $("#blogDisplay").append( // should we put use post image INSIDE the post div?
             `<div class="post_div" id=${id}>
                     <div class="post_section">
+                        <div class="post_date"></div>
                         <div class="user_name"></div>
                         <div class="user_post"></div>
                         <div class="user_post_image"></div>
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
+                                <input id="date" name="date">
                                 <label for = "usernamebox">Username</label>
                                 <input name="commentUsername" type="text" class="usernamebox"/>
                                 <label for = "commentbox">Comment here</label>
@@ -95,6 +98,7 @@ $(document).ready(function () {
                     </div>
                     <div class="comment_section"></div>
                 </div>`);
+        $(`#${id} .post_date`).html(`${arrayDate}`);
         $(`#${id} .post_section .user_name`).html(`${arrayUser}`);
         $(`#${id} .post_section .user_post`).html(`${arrayPost}`);
         $(`#${id} .comment`).on('click', function () {
@@ -131,7 +135,7 @@ $(document).ready(function () {
     }
 
 //emoji starts
-    function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayImage) {
+    function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayDate, arrayImage) {
 //before meoji
 //     function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayDate, arrayImage) {
 
@@ -141,12 +145,14 @@ $(document).ready(function () {
         $("#blogDisplay").append(
             `<div class="post_div" id=${id}>
                     <div class="post_section">
+                        <div class="post_date"></div>
                         <div class="user_name"></div>
                         <div class="user_post"></div>
                         <div class="user_post_image"></div>
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
+                                <input id="date" name="date">
                                 <label for = "usernamebox">Username</label>
                                 <input name="commentUsername" type="text" class="usernamebox"/>
                                 <label for = "commentbox">Comment here</label>
@@ -157,6 +163,7 @@ $(document).ready(function () {
                     </div>
                     <div class="comment_section"></div>
                 </div>`);
+        $(`#${id} .post_date`).html(`${arrayDate}`);
         $(`#${id} .post_section .user_name`).html(`${arrayUser}`);
         $(`#${id} .post_section .user_post`).html(`${arrayPost}`);
         $(`#${id} .comment`).on('click', function () {
@@ -195,7 +202,7 @@ $(document).ready(function () {
            
 //     }
      
-function displayPost(arrayIndex, arrayUser, arrayPost, arrayImage ) {
+function displayPost(arrayIndex, arrayUser, arrayPost, arrayDate, arrayImage ) {
     let id = arrayIndex.toString();
     console.log(id);
     //console.log(arrayImage);
