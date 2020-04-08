@@ -181,8 +181,9 @@ padding: 5px;
 
 .user_image{
     display:flex;
-    width:30%;
     justify-content:center;
+    object-fit: scale-down;
+    padding-right: 15px;
 }   
 
 .user-icon {
@@ -201,13 +202,78 @@ padding: 5px;
 }
 
 .comment{
-    margin-top:8px;
+    margin:8px;
     display:flex;
-    width:15%;
     align-self:center;
     text-align:center;
+    border: 0.1em solid white;
+    border-radius: 3px;
+    background-color: transparent;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.comment:hover {
+    background-color: lightblue;
+    color: black;
 }
 
 .emojicontainer {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.emojigroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.commentbox {
+    padding: 5px;
+}
+
+.form_div {
+    border: 0.1em solid white;
+    border-radius: 3px;
+    padding: 5px; 
+}
+
+.comment_container {
+    padding: 5px;
+}
+
+.usernamebox {
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.commentbox {
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.submit {
+    margin:8px;
+    display:flex;
+    align-self:center;
+    text-align:center;
+    border: 0.1em solid white;
+    border-radius: 3px;
+    background-color: transparent;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 17px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.submit:hover {
+    background-color: lightblue;
+    color: black;
 }
