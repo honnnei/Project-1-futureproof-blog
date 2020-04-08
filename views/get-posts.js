@@ -7,6 +7,7 @@ $(document).ready(function () {
             let index = blogArray.indexOf(element);
             let postUser = element.username;
             let postContent = element.blogPost;
+            let postDate = element.date;
             let giphyQuery = element.image; //if there is giphy input
             console.log(giphyQuery); //this works
             let commentsPresent = element.comments[0];
@@ -27,10 +28,10 @@ $(document).ready(function () {
                 .then(imageUrl => {
 
                     if (!commentsPresent) {
-                        displayPostNoComment(index, postUser, postContent, imageUrl);
+                        displayPostNoComment(index, postUser, postContent, imageUrl, postDate);
                     } else {
                         let arrayOfComments = element.comments;
-                        displayPostWithComment(index, postUser, postContent, arrayOfComments, element, imageUrl);
+                        displayPostWithComment(index, postUser, postContent, arrayOfComments, element, imageUrl, postDate);
                     }
                 })                 //Had trouble with async. displayPost() must be here to ensure image is returned
                    
@@ -51,16 +52,18 @@ $(document).ready(function () {
         }); //array map close
     }); //axios close
 
-    function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayImage ) {
+    function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayImage, arrayDate ) {
         //taken out of the function arguments: commentIndex, commentUser, commentValue, commentNumber
         let id = arrayIndex.toString();
         //displaying the post:
         $("#blogDisplay").append( // should we put use post image INSIDE the post div?
             `<div class="post_div" id=${id}>
                     <div class="post_section">
+                        <div class="post_date"></div>
                         <div class="user_name"></div>
                         <div class="user_post_image">
-                            <div class="user_post"></div>
+                            <div class="user_post">
+                            </div>
                         </div>
                         <button class="comment">Comment</button>
                         <div class="form_div">
@@ -76,6 +79,7 @@ $(document).ready(function () {
                     </div>
                     <div class="comment_section"></div>
                 </div>`);
+        $(`#${id} .post_date`).html(`${arrayDate}`);
         $(`#${id} .post_section .user_name`).html(`${arrayUser}`);
         $(`#${id} .post_section .user_post_image .user_post`).html(`${arrayPost}`);
         $(`#${id} .comment`).on('click', function () {
@@ -111,13 +115,14 @@ $(document).ready(function () {
         $(`#${commentId} .comment_content`).html(`${contentOfComment}`);   
     }
 
-    function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayImage) {
+    function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayImage, arrayDate) {
         let id = arrayIndex.toString();
         console.log(id);
 
         $("#blogDisplay").append(
             `<div class="post_div" id=${id}>
                     <div class="post_section">
+                        <div class="post_date"></div>
                         <div class="user_name"></div>
                         <div class="user_post_image">
                             <div class="user_post"></div>
@@ -135,6 +140,7 @@ $(document).ready(function () {
                     </div>
                     <div class="comment_section"></div>
                 </div>`);
+        $(`#${id} .post_date`).html(`${arrayDate}`);
         $(`#${id} .post_section .user_name`).html(`${arrayUser}`);
         $(`#${id} .post_section .user_post`).html(`${arrayPost}`);
         $(`#${id} .comment`).on('click', function () {
