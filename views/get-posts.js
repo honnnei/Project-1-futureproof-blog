@@ -72,7 +72,6 @@ $(document).ready(function () {
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
-                                <input id="date" name="date">
                                 <label for = "usernamebox">Username</label>
                                 <input name="commentUsername" type="text" class="usernamebox"/>
                                 <label for = "commentbox">Comment here</label>
@@ -93,6 +92,9 @@ $(document).ready(function () {
             console.log(arrayImage);
             $(`#${id} .user_post_image`).append(`<div class="user_image"></div>`);
             $(`#${id} .user_image`).html(`<img class ="giphyImage" src="${arrayImage}">`); //Applied class "giphyImage" to reduce image size. Feel free to change styling.
+        }
+        else{
+           $(`#${id} .user_post`).css("width", "100%");
         }
         //mapping comments:
         displayedComments = commentArray.map(comment => {
@@ -135,7 +137,7 @@ $(document).ready(function () {
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
-                                <input id="date" name="date">
+                                
                                 <label for = "usernamebox">Username</label>
                                 <input name="commentUsername" type="text" class="usernamebox"/>
                                 <label for = "commentbox">Comment here</label>
@@ -157,6 +159,9 @@ $(document).ready(function () {
             console.log(arrayImage);
             $(`#${id} .user_post_image`).append(`<div class="user_image"></div>`);
             $(`#${id} .user_image`).html(`<img class ="giphyImage" src="${arrayImage}">`); //Applied class "giphyImage" to reduce image size. Feel free to change styling.
+        }
+        else{
+            $(`#${id} .user_post`).css("width", "100%");
         }
 
     }
