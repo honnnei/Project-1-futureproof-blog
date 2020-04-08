@@ -1,10 +1,55 @@
 body {
     display: flex;
+    background-color:lightblue;
     flex-direction: column;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
     font-family: 'Noto Sans KR', sans-serif;
-    background-color:lightblue;
+    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+header {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    width:100%;
+}
+
+.logo{
+    display:flex;
+}
+
+nav {
+    display:flex;
+    /* width:100%; */
+    /* background-color:grey; */
+    /* background-color:lightblue; */
+    /* min-height: 100px; */
+    width: 300px;
+    justify-content: space-around;
+    align-items: center;
+    margin:0;
+    padding:0;
+    /* border:2px red solid; */
+}
+
+footer {
+    display: flex;
+    height: 150px;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #blogDisplay {
