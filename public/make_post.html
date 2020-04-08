@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post</title>
-    <link href="post-style.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="post-style.css" type="text/css" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,400&display=swap" rel="stylesheet">  -->
 </head>
 <body>
 
     
-
+<header>
+    <h1 class="logo">Blog - feel free to come up with a name!</h1>
     <nav>
-        <!-- <div id="title"><h1>Make a post!</h1></div> -->
+        <button class="btn lg-btn btn-outline-light"><a href="http://localhost:4001/">New Post</a></button>
+        <button class="btn lg-btn btn-outline-light"><a href="http://localhost:4001/new-entry">Blog Feed</a></button>
     </nav>
+</header>
 
     <article>
         <h2>Make a post!</h2>
@@ -28,5 +32,9 @@
             <button type="submit" id="postSubmitButton">Send Your Post</button>
         </form>
     </article>
+
+    <footer>
+        This is a footer.
+    </footer>
 </body>
 </html>
