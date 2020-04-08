@@ -8,14 +8,15 @@ body {
     
 }
 
-a {
-    text-decoration: none;
-    color: black;
+
+#navButtons{
+    background-color:lightpink;
+    border: 1px solid grey;
+    color:black;
 }
 
-a:hover {
-    text-decoration: none;
-    color: black;
+#navButtons:hover{
+    background-color:white;
 }
 
 header {

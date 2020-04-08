@@ -16,8 +16,8 @@
 <header>
     <h1 class="logo">Blog - feel free to come up with a name!</h1>
     <nav>
-        <button class="btn lg-btn btn-outline-light"><a href="/">New Post</a></button>
-        <button class="btn lg-btn btn-outline-light"><a href="/new-entry">Blog Feed</a></button>
+        <a href="/"><button id="navButtons" class="btn lg-btn btn-outline-light">New Post</button></a>
+        <a href="/new-entry"><button id="navButtons" class="btn lg-btn btn-outline-light">Blog Feed</button></a>
     </nav>
 </header>
 
@@ -36,9 +36,6 @@
         </form>
     </article>
 
-    <footer>
-        This is a footer.
-    </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script>
     $( "#blogPost" ).on('input', function() {
