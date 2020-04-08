@@ -26,8 +26,8 @@
         <form action='/' method=POST>
             <label for="user"><p>Nickname:</p></label>
             <input class="text-form" type="text" id="user" name ="username"> <!--add a default 'anonymous for username--> 
-            <textarea name="blogPost" id="blogPost" cols="20" rows="7" maxlength="140" aria-autocomplete="list" aria-activedescendant="typeaheadFocus-0.9150244915900985" spellcheck="true" style="outline: none; user-select: text; white-space: pre-wrap; overflow-wrap: break-word;"></textarea><!-- coppied most of these properties from twitter new tweet box not sure if all of them work-->
-            <h4 id="characterAlert">You Have Reached the Character Limit of 100.</h4>
+            <textarea name="blogPost" id="blogPost" cols="20" rows="7" maxlength="100" spellcheck="true" style="outline: none; user-select: text; white-space: pre-wrap; overflow-wrap: break-word;"></textarea><!-- coppied most of these properties from twitter new tweet box not sure if all of them work-->
+            <div id="characterAlert" class="characterAlert"><p>You Have Reached the Character Limit of 100.</p></div>
             <label for="image"><p>Add an image! (Optional):</p></label>
             <input class="text-form" type="text" id="image" name ="image"> <!--Enter image search query for giphy--> 
             <button type="submit" id="postSubmitButton">Send Your Post</button>
@@ -43,12 +43,16 @@
         if ($(this).val().length>=100) {
             // alert('you have reached a limit of 100'); 
             $("#characterAlert").show();
+            $("#characterAlert").css("display", "flex");
         }
         if ($(this).val().length<100) {
             // alert('you have reached a limit of 100'); 
             $("#characterAlert").hide();
         }
     });
+    // $( "#blogPost" ).keyup(function() {
+    // console.log(this.value.length);
+    // });
     </script>
 </body>
 </html>
