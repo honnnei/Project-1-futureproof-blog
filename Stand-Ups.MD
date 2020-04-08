@@ -23,3 +23,26 @@
 ### 1) Making the posts appear on the second html page's display and generally working on how the pages are presented.
 ### 2) Want to make the front end look more presentable/ better UI and get the comments section functioning
 ### 3) Mainly the comments section and the clunkiness of UI 
+
+
+# Stand-Up 2 (Wednessday)
+
+# Rosie
+### 1) Merging all the styling and functionality together, making sure classes etc worked.
+### 2) Want to get the emoji part incorporated and functioning
+### 3) Using git ( eg pulling master and moving between branches - stressful and confusing!)
+
+# Hanna
+### 1) Managed to get comments displayed correctly
+### 2) Moved the giphy feature to a separate function so now not working so want to get that working today and clean up styling.
+### 3) No blockers at the moment.
+
+# Keir
+### 1) Getting comments displayed
+### 2) The emoji reactions. 
+### 3) No blockers at the moment. 
+
+# Matt 
+### 1) Fixed giphy and working on display / styling
+### 2) Work on styling and making giphy work
+### 3) No blockers.
