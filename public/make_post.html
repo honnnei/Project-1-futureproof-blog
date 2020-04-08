@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -16,8 +17,8 @@
 <header>
     <h1 class="logo">Blog - feel free to come up with a name!</h1>
     <nav>
-        <button class="btn lg-btn btn-outline-light"><a href="/">New Post</a></button>
-        <button class="btn lg-btn btn-outline-light"><a href="/new-entry">Blog Feed</a></button>
+        <a href="/"><button id="navButtons" class="btn lg-btn btn-outline-light">New Post</button></a>
+        <a href="/new-entry"><button id="navButtons" class="btn lg-btn btn-outline-light">Blog Feed</button></a>
     </nav>
 </header>
 
@@ -27,17 +28,15 @@
             <input id="date" name="date">
             <label for="user"><p>Nickname:</p></label>
             <input class="text-form" type="text" id="user" name ="username" required> <!--add a default 'anonymous for username--> 
+            <div class="charactersCounterDisplayed"><p id="numberOfCharacters"></p></div>
             <textarea required name="blogPost" id="blogPost" cols="20" rows="7" maxlength="100" spellcheck="true" style="outline: none; user-select: text; white-space: pre-wrap; overflow-wrap: break-word;"></textarea><!-- coppied most of these properties from twitter new tweet box not sure if all of them work-->
-            <div id="characterAlert" class="characterAlert"><p>You Have Reached the Character Limit of 100.</p></div>
+            <div id="characterAlert" class="characterAlert"><p>You Have Reached the Character Limit!</p></div>
             <label for="image"><p>Add an image! (Optional):</p></label>
             <input class="text-form" type="text" id="image" name ="image"> <!--Enter image search query for giphy--> 
             <button type="submit" id="postSubmitButton">Send Your Post</button>
         </form>
     </article>
 
-    <footer>
-        This is a footer.
-    </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script>
     $( "#blogPost" ).on('input', function() {
@@ -51,9 +50,34 @@
             $("#characterAlert").hide();
         }
     });
-    // $( "#blogPost" ).keyup(function() {
-    // console.log(this.value.length);
-    // });
+
+    let charactersCounter = 0;
+    $('#blogPost').on('keydown', function(e){
+    // get keycode of current keypress event
+    var code = (e.keyCode || e.which);
+    
+        if (charactersCounter < 100) {
+            if ((code > 31) && (code < 126) && (code != 37) && (code != 38) && (code != 39) && (code != 40) && (code != 46) && (code != 93))  {
+                charactersCounter += 1;
+                console.log(charactersCounter);
+            } else if ((code === 219) || (code === 221) || (code === 222) || (code === 186) || (code === 192) || (code === 188) || (code === 190) || (code === 191)) {
+                charactersCounter += 1;
+                console.log(charactersCounter);
+            } else if ((code === 8) && (charactersCounter > 0)) {
+                charactersCounter -= 1;
+                console.log(charactersCounter);
+            }
+        } else {
+            if ((code === 8) && (charactersCounter > 0)) {
+                charactersCounter -= 1;
+                console.log(charactersCounter);
+            }
+        }
+    
+    $("#numberOfCharacters").html(`${charactersCounter}`);
+    
+    });
+    
     </script>
 </body>
 </html>

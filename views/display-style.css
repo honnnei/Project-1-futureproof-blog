@@ -8,14 +8,15 @@ body {
     
 }
 
-a {
-    text-decoration: none;
-    color: black;
+
+#navButtons{
+    background-color:lightpink;
+    border: 1px solid grey;
+    color:black;
 }
 
-a:hover {
-    text-decoration: none;
-    color: black;
+#navButtons:hover{
+    background-color:white;
 }
 
 header {
@@ -25,6 +26,13 @@ header {
     align-items: center;
     height: 150px;
     width:100%;
+}
+
+h1{
+    font-size:2.5rem;
+    font-family: 'Pacifico', cursive;
+    color:lightpink;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .logo{
@@ -223,9 +231,29 @@ padding: 5px;
 .comment:hover {
     background-color: lightblue;
     color: black;
+/* =======
+    margin-top:8px;
+    display: inline-flex;
+    width:15%;
+    align-self:center;
+    text-align:center;
+    /* margin-right: 35%; */
 }
 
 .emojicontainer {
+    display: inline-flex;
+    /* margin-left: 35%; */
+}
+
+.comment_and_emojis {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.emojigroup {
+    padding: 1px;
+    margin: 1px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -292,4 +320,8 @@ padding: 5px;
 
 p {
     padding-right: 5px;
+/*     flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center; */
 }

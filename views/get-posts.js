@@ -93,6 +93,7 @@ $(document).ready(function () {
                                 <input name="commentUsername" type="text" class="usernamebox"/>
                                 <label for = "commentbox">Comment here</label>
                                 <input name="commentContent" type="textarea" class="commentbox"/>
+
                                 <button type = "submit" class="submit">Submit</button>
                             </form>
                         </div>
@@ -153,7 +154,9 @@ $(document).ready(function () {
                         <div class="user_post_image">
                             <div class="user_post"></div>
                         </div>
-                        <button class="comment">Comment</button>
+                        <div class="comment_and_emojis">
+                            <button class="comment">Comment</button>
+                        </div>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
                                 <input id="date" name="date">
@@ -237,7 +240,7 @@ function displayEmojiReacts(index) {
     let neutralCount = 0;
     let poopCount = 0;
 
-    $(`#${id}`).append(`<div id=${bigEmojiDiv} class="emojicontainer"></div>`);
+    $(`#${id} .comment_and_emojis`).append(`<div id=${bigEmojiDiv} class="emojicontainer"></div>`);
         $(`#${bigEmojiDiv}`).append(`<div id=group1${id} class="emojigroup"></div>`);
             $(`#group1${id}`).append(`<div id=laughing${id} class="laughing">🤣</div>`);
             $(`#group1${id}`).append(`<div id=laughingCounter${id} class="counter">0</div>`);
