@@ -127,12 +127,14 @@ $(document).ready(function () {
 
         $(`#${idOfPost} .comment_section`).append(
             `<div id=${commentId} class="comment_container">
+                <div class="comment_icon"></div>
                 <div class="comment_username"></div>
                 <div class="comment_content"></div>
             </div>`
         );
-        $(`#${commentId} .comment_username`).html(`${userOfComment}`);    
-        $(`#${commentId} .comment_content`).html(`${contentOfComment}`);   
+        $(`#${commentId} .comment_username`).html(`&#128100; ${userOfComment}`);    
+        $(`#${commentId} .comment_content`).html(`${contentOfComment}`);  
+        $(`#${commentId} .comment_icon`).html(`&#128172;`);
     }
 
 //emoji starts

@@ -125,18 +125,17 @@ footer {
     /* border: 1px solid black; */
 }
 
-.comment_container{
-    margin:5px 0px;
-    border: 1px solid grey;
-    background-color:white;
-}
+/* .comment_container{ */
+    /* border: 1px solid grey; */
+    /* background-color:white;
+} */
 
 .comment_username{
     display:flex;
     font-size:20px;
-    padding-left:20px;
+    padding-left: 10px;
     background-color:lightblue;
-    border-bottom: grey 1px solid;
+    border: black 1px solid;
 }
 
 .comment_content{
@@ -144,6 +143,8 @@ footer {
     padding: 5px;
     padding-left:10px;
     height: auto;
+    background-color: white;
+    border: black 1px solid;
 }
 
 .comment-container-show {
@@ -201,6 +202,9 @@ padding: 5px;
     border: 1px solid black;
 }
 
+
+/* Comments and Emojis Section */
+
 .comment{
     margin:8px;
     display:flex;
@@ -209,7 +213,7 @@ padding: 5px;
     border: 0.1em solid white;
     border-radius: 3px;
     background-color: transparent;
-    color: white;
+    color: black;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 17px;
     text-decoration: none;
@@ -244,13 +248,14 @@ padding: 5px;
     padding: 5px; 
 }
 
-.comment_container {
+/* .comment_container {
     padding: 5px;
-}
+} */
 
 .usernamebox {
     border-radius: 3px;
     padding: 5px;
+    background-color: lightblue;
 }
 
 .commentbox {
@@ -266,7 +271,7 @@ padding: 5px;
     border: 0.1em solid white;
     border-radius: 3px;
     background-color: transparent;
-    color: white;
+    color: black;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 17px;
     text-decoration: none;
@@ -276,4 +281,15 @@ padding: 5px;
 .submit:hover {
     background-color: lightblue;
     color: black;
+}
+
+.comment_icon {
+    margin-left: 10px;
+    margin-bottom: none;
+    background-color: lightpink;
+
+}
+
+p {
+    padding-right: 5px;
 }
