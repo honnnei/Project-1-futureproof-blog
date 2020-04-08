@@ -1,35 +1,66 @@
 $(document).ready(function () {
-    axios.get('/get-posts').then(response => {
-        console.log(response);  
-      let blogArray = response.data.posts;
-        console.log(Array.isArray(blogArray));
+       
+    axios.get('/get-posts').then(response => { 
+        let blogArray = response.data.posts;
+        // console.log(Array.isArray(blogArray));
         displayedBlogArray = blogArray.map(element => {
-            console.log(element);
             let index = blogArray.indexOf(element);
             let postUser = element.username;
             let postContent = element.blogPost;
+            let giphyQuery = element.image; //if there is giphy input
+            console.log(giphyQuery); //this works
             let commentsPresent = element.comments[0];
+            //calling display function if giphy:
+            if (giphyQuery) {
+                let imageSource = "";
+                let key = "nNH7998Ir4ao8g1OTRrIQxqYr1EomuJO"
+                let url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${giphyQuery}&limit=1&offset=0&rating=G&lang=en` //API call. 1 image is returned for user's search query
 
-            if (!commentsPresent) {
+                fetch(url) //Returns image url response from giphy api
+                .then(response => response.json())
+                .then(content => {
+                    let image = content.data[0].id;
+                    imageSource = "https://media.giphy.com/media/" + image + "/giphy.gif";
+                    return imageSource;
+                    // displayPost(index, postUser, postContent, image);  
+                })
+                .then(imageUrl => {
 
-                displayPostNoComment(index, postUser, postContent);
-                // console.log('this is a post with no comment');
-            } else {
-                let arrayOfComments = element.comments;
-                displayPostWithComment(index, postUser, postContent, arrayOfComments, element);
-            } // if statement close 
+                    if (!commentsPresent) {
+                        displayPostNoComment(index, postUser, postContent, imageUrl);
+                    } else {
+                        let arrayOfComments = element.comments;
+                        displayPostWithComment(index, postUser, postContent, arrayOfComments, element, imageUrl);
+                    }
+                })                 //Had trouble with async. displayPost() must be here to ensure image is returned
+                   
+                    
+              .catch(err=>{
+                    console.error(err);
+                });
+            } else { //calling display function if no giphy:
+                if (!commentsPresent) {
+                    displayPostNoComment(index, postUser, postContent);
+                } else {
+                    let arrayOfComments = element.comments;
+                    displayPostWithComment(index, postUser, postContent, arrayOfComments, element);
+                }
+            }
+
+
         }); //array map close
     }); //axios close
 
-    function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement ) {
+    function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayImage ) {
         //taken out of the function arguments: commentIndex, commentUser, commentValue, commentNumber
         let id = arrayIndex.toString();
         //displaying the post:
-        $("#blogDisplay").append(
+        $("#blogDisplay").append( // should we put use post image INSIDE the post div?
             `<div class="post_div" id=${id}>
                     <div class="post_section">
                         <div class="user_name"></div>
                         <div class="user_post"></div>
+                        <div class="user_post_image"></div>
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
@@ -48,6 +79,11 @@ $(document).ready(function () {
         $(`#${id} .comment`).on('click', function () {
             $(`#${id} .form_div`).toggle();
         });
+        if(arrayImage){
+            console.log(arrayImage);
+            $(`#${id} .user_post_image`).append(`<div class="user_image"></div>`);
+            $(`#${id} .user_image`).html(`<img class ="giphyImage" src="${arrayImage}">`); //Applied class "giphyImage" to reduce image size. Feel free to change styling.
+        }
         //mapping comments:
         displayedComments = commentArray.map(comment => {
                 let commentIndex = commentArray.indexOf(comment);
@@ -73,7 +109,7 @@ $(document).ready(function () {
         $(`#${commentId} .comment_content`).html(`${contentOfComment}`);   
     }
 
-    function displayPostNoComment(arrayIndex, arrayUser, arrayPost) {
+    function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayImage) {
         let id = arrayIndex.toString();
         console.log(id);
 
@@ -82,6 +118,7 @@ $(document).ready(function () {
                     <div class="post_section">
                         <div class="user_name"></div>
                         <div class="user_post"></div>
+                        <div class="user_post_image"></div>
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
@@ -100,40 +137,37 @@ $(document).ready(function () {
         $(`#${id} .comment`).on('click', function () {
             $(`#${id} .form_div`).toggle();
         });
+        if(arrayImage){
+            console.log(arrayImage);
+            $(`#${id} .user_post_image`).append(`<div class="user_image"></div>`);
+            $(`#${id} .user_image`).html(`<img class ="giphyImage" src="${arrayImage}">`); //Applied class "giphyImage" to reduce image size. Feel free to change styling.
+        }
 
     }
 
 });
   
-function makeAGiphy() {
-            let query = element.image;
-            console.log(index);
-            console.log(postUser);
-            console.log(postContent);
-            console.log(query);
-            let image = "";
-                
-            if(query){
-                let key = "nNH7998Ir4ao8g1OTRrIQxqYr1EomuJO"
-                let url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${query}&limit=1&offset=0&rating=G&lang=en` //API call. 1 image is returned for user's search query
+// function makeAGiphy(query) {
+//             let imageSource = "";
+//                 let key = "nNH7998Ir4ao8g1OTRrIQxqYr1EomuJO"
+//                 let url = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${query}&limit=1&offset=0&rating=G&lang=en` //API call. 1 image is returned for user's search query
 
-                fetch(url) //Returns image url response from giphy api
-                .then(response => response.json())
-                .then(content => {
-                    let image = content.data[0].id;
-                    image = "https://media.giphy.com/media/" + image + "/giphy.gif";
-                    console.log(image);
-                    displayPost(index, postUser, postContent, image);                   //Had trouble with async. displayPost() must be here to ensure image is returned
-                    return image;
-                })
-                .catch(err=>{
-                    console.error(err);
-                })
-            }
-            else{
-                displayPost(index, postUser, postContent);
-            }
-    }
+//                 fetch(url) //Returns image url response from giphy api
+//                 .then(response => response.json())
+//                 .then(content => {
+//                     let image = content.data[0].id;
+//                     imageSource = "https://media.giphy.com/media/" + image + "/giphy.gif";
+//                     console.log(imageSource);
+//                     // displayPost(index, postUser, postContent, image);                   //Had trouble with async. displayPost() must be here to ensure image is returned
+//                     return imageSource;
+//                     displayPostNoComment();
+//                     displayPostWithComment();
+//                 })
+//                 .catch(err=>{
+//                     console.error(err);
+//                 })
+           
+//     }
      
 function displayPost(arrayIndex, arrayUser, arrayPost, arrayImage ) {
     let id = arrayIndex.toString();
