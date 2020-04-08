@@ -7,7 +7,6 @@ $(document).ready(function () {
             let index = blogArray.indexOf(element);
             let postUser = element.username;
             let postContent = element.blogPost;
-            let postDate = element.date;
             let giphyQuery = element.image; //if there is giphy input
             console.log(giphyQuery); //this works
             let commentsPresent = element.comments[0];
@@ -28,10 +27,19 @@ $(document).ready(function () {
                 .then(imageUrl => {
 
                     if (!commentsPresent) {
-                        displayPostNoComment(index, postUser, postContent, postDate, imageUrl);
+//emoji starts:
+                        displayPostNoComment(index, postUser, postContent, imageUrl);
+                        displayEmojiReacts(index);
                     } else {
                         let arrayOfComments = element.comments;
-                        displayPostWithComment(index, postUser, postContent, arrayOfComments, element, postDate, imageUrl);
+                        displayPostWithComment(index, postUser, postContent, arrayOfComments, element, imageUrl);
+                        displayEmojiReacts(index);
+//this was on master before meoji:
+//                         displayPostNoComment(index, postUser, postContent, postDate, imageUrl);
+//                     } else {
+//                         let arrayOfComments = element.comments;
+//                         displayPostWithComment(index, postUser, postContent, arrayOfComments, element, postDate, imageUrl);
+
                     }
                 })                 //Had trouble with async. displayPost() must be here to ensure image is returned
                    
@@ -41,10 +49,18 @@ $(document).ready(function () {
                 });
             } else { //calling display function if no giphy:
                 if (!commentsPresent) {
-                    displayPostNoComment(index, postUser, postContent, postDate);
+//emoji starts:
+                    displayPostNoComment(index, postUser, postContent);
+                    displayEmojiReacts(index);
                 } else {
                     let arrayOfComments = element.comments;
-                    displayPostWithComment(index, postUser, postContent, arrayOfComments, element, postDate);
+                    displayPostWithComment(index, postUser, postContent, arrayOfComments, element);
+                    displayEmojiReacts(index);
+//this was on master before meoji:
+//                     displayPostNoComment(index, postUser, postContent, postDate);
+//                 } else {
+//                     let arrayOfComments = element.comments;
+//                     displayPostWithComment(index, postUser, postContent, arrayOfComments, element, postDate);
                 }
             }
 
@@ -52,23 +68,23 @@ $(document).ready(function () {
         }); //array map close
     }); //axios close
 
-    function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayDate, arrayImage) {
+//emoji starts:
+    function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayImage ) {
+//this was on master before meoji:
+//     function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayDate, arrayImage) {
+
         //taken out of the function arguments: commentIndex, commentUser, commentValue, commentNumber
         let id = arrayIndex.toString();
         //displaying the post:
         $("#blogDisplay").append( // should we put use post image INSIDE the post div?
             `<div class="post_div" id=${id}>
                     <div class="post_section">
-                        <div class="post_date"></div>
                         <div class="user_name"></div>
-                        <div class="user_post_image">
-                            <div class="user_post">
-                            </div>
-                        </div>
+                        <div class="user_post"></div>
+                        <div class="user_post_image"></div>
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
-                                <input id="date" name="date">
                                 <label for = "usernamebox">Username</label>
                                 <input name="commentUsername" type="text" class="usernamebox"/>
                                 <label for = "commentbox">Comment here</label>
@@ -79,9 +95,8 @@ $(document).ready(function () {
                     </div>
                     <div class="comment_section"></div>
                 </div>`);
-        $(`#${id} .post_date`).html(`${arrayDate}`);
         $(`#${id} .post_section .user_name`).html(`${arrayUser}`);
-        $(`#${id} .post_section .user_post_image .user_post`).html(`${arrayPost}`);
+        $(`#${id} .post_section .user_post`).html(`${arrayPost}`);
         $(`#${id} .comment`).on('click', function () {
             $(`#${id} .form_div`).toggle();
         });
@@ -115,18 +130,20 @@ $(document).ready(function () {
         $(`#${commentId} .comment_content`).html(`${contentOfComment}`);   
     }
 
-    function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayDate, arrayImage) {
+//emoji starts
+    function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayImage) {
+//before meoji
+//     function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayDate, arrayImage) {
+
         let id = arrayIndex.toString();
         console.log(id);
 
         $("#blogDisplay").append(
             `<div class="post_div" id=${id}>
                     <div class="post_section">
-                        <div class="post_date"></div>
                         <div class="user_name"></div>
-                        <div class="user_post_image">
-                            <div class="user_post"></div>
-                        </div>
+                        <div class="user_post"></div>
+                        <div class="user_post_image"></div>
                         <button class="comment">Comment</button>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
@@ -140,7 +157,6 @@ $(document).ready(function () {
                     </div>
                     <div class="comment_section"></div>
                 </div>`);
-        $(`#${id} .post_date`).html(`${arrayDate}`);
         $(`#${id} .post_section .user_name`).html(`${arrayUser}`);
         $(`#${id} .post_section .user_post`).html(`${arrayPost}`);
         $(`#${id} .comment`).on('click', function () {
@@ -200,5 +216,39 @@ function displayPost(arrayIndex, arrayUser, arrayPost, arrayImage ) {
 //     $(`#${id} .post_content`).append(`<button class="comment">Comment</button>`); - from matt-style
 }
 
+function displayEmojiReacts(index) {
+    let id = index.toString();
+    let bigEmojiDiv = "emoji"+id
+    let laughCount = 0;
+    let neutralCount = 0;
+    let poopCount = 0;
 
+    $(`#${id}`).append(`<div id=${bigEmojiDiv} class="emojicontainer"></div>`);
+        $(`#${bigEmojiDiv}`).append(`<div id=group1${id} class="emojigroup"></div>`);
+            $(`#group1${id}`).append(`<div id=laughing${id} class="laughing">🤣</div>`);
+            $(`#group1${id}`).append(`<div id=laughingCounter${id} class="counter">0</div>`);
+            $(`#laughing${id}`).click(function() {
+                laughCount += 1;
+                $(`#laughingCounter${id}`).html(`${laughCount}`);
+            });
+        
 
+        $(`#${bigEmojiDiv}`).append(`<div id=group2${id} class="emojigroup"></div>`);
+            $(`#group2${id}`).append(`<div id=neutral${id} class="neutral">😑</div>`);
+            $(`#group2${id}`).append(`<div id=neutralCounter${id}  class="counter">0</div>`);
+            $(`#neutral${id}`).click(function() {
+                neutralCount += 1;
+                $(`#neutralCounter${id}`).html(`${neutralCount}`);
+            });
+
+        $(`#${bigEmojiDiv}`).append(`<div id=group3${id} class="emojigroup"></div>`);
+            $(`#group3${id}`).append(`<div id=poop${id} class="poop">💩</div>`);
+            $(`#group3${id}`).append(`<div id=poopCounter${id} class="counter">0</div>`);
+            $(`#poop${id}`).click(function() {
+                poopCount += 1;
+                $(`#poopCounter${id}`).html(`${poopCount}`);
+            });
+
+        
+
+}
