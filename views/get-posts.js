@@ -27,12 +27,19 @@ $(document).ready(function () {
                 .then(imageUrl => {
 
                     if (!commentsPresent) {
+//emoji starts:
                         displayPostNoComment(index, postUser, postContent, imageUrl);
                         displayEmojiReacts(index);
                     } else {
                         let arrayOfComments = element.comments;
                         displayPostWithComment(index, postUser, postContent, arrayOfComments, element, imageUrl);
                         displayEmojiReacts(index);
+//this was on master before meoji:
+//                         displayPostNoComment(index, postUser, postContent, postDate, imageUrl);
+//                     } else {
+//                         let arrayOfComments = element.comments;
+//                         displayPostWithComment(index, postUser, postContent, arrayOfComments, element, postDate, imageUrl);
+
                     }
                 })                 //Had trouble with async. displayPost() must be here to ensure image is returned
                    
@@ -42,12 +49,18 @@ $(document).ready(function () {
                 });
             } else { //calling display function if no giphy:
                 if (!commentsPresent) {
+//emoji starts:
                     displayPostNoComment(index, postUser, postContent);
                     displayEmojiReacts(index);
                 } else {
                     let arrayOfComments = element.comments;
                     displayPostWithComment(index, postUser, postContent, arrayOfComments, element);
                     displayEmojiReacts(index);
+//this was on master before meoji:
+//                     displayPostNoComment(index, postUser, postContent, postDate);
+//                 } else {
+//                     let arrayOfComments = element.comments;
+//                     displayPostWithComment(index, postUser, postContent, arrayOfComments, element, postDate);
                 }
             }
 
@@ -55,7 +68,11 @@ $(document).ready(function () {
         }); //array map close
     }); //axios close
 
+//emoji starts:
     function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayImage ) {
+//this was on master before meoji:
+//     function displayPostWithComment(arrayIndex, arrayUser, arrayPost, commentArray, postElement, arrayDate, arrayImage) {
+
         //taken out of the function arguments: commentIndex, commentUser, commentValue, commentNumber
         let id = arrayIndex.toString();
         //displaying the post:
@@ -113,7 +130,11 @@ $(document).ready(function () {
         $(`#${commentId} .comment_content`).html(`${contentOfComment}`);   
     }
 
+//emoji starts
     function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayImage) {
+//before meoji
+//     function displayPostNoComment(arrayIndex, arrayUser, arrayPost, arrayDate, arrayImage) {
+
         let id = arrayIndex.toString();
         console.log(id);
 
@@ -141,6 +162,7 @@ $(document).ready(function () {
         $(`#${id} .comment`).on('click', function () {
             $(`#${id} .form_div`).toggle();
         });
+        
         if(arrayImage){
             console.log(arrayImage);
             $(`#${id} .user_post_image`).append(`<div class="user_image"></div>`);
