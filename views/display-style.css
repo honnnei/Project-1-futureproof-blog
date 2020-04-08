@@ -18,12 +18,10 @@ body {
 .post_div {
     display: flex;
     flex-direction:column;
-    /* justify-content: space-around; */
     height: auto;
     width: 100%;
     background-color: lightpink;
     padding: 10px;
-    /* border: 5px black solid; */
     border:2px solid grey;
     border-radius:10px;
     margin:10px;
@@ -35,12 +33,12 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* margin:10px;
-    padding:5px; */
+
     background-color:white;
 }
 
 .user_post_image{
+    background-color:white;
     display:flex;
     flex-direction:row;
     /* border:2px red solid; */
@@ -58,15 +56,42 @@ body {
     border-bottom: grey 1px solid;
 }
 
-.some class { //please DEBUG
+/* .some class { //please DEBUG
     background-color: white;
     width: 100%;
 
     border: 10px lightpink solid;
     background-color: silver;
-}
+} */
 
 /* 2 form classes below: */
+
+.comment_section{
+    
+    /* border: 1px solid black; */
+}
+
+.comment_container{
+    margin:5px 0px;
+    border: 1px solid grey;
+    background-color:white;
+}
+
+.comment_username{
+    display:flex;
+    width: 98%;
+    font-size:20px;
+    padding-left:20px;
+    background-color:lightblue;
+    border-bottom: grey 1px solid;
+}
+
+.comment_content{
+    word-wrap: break-word; 
+    padding: 5px;
+    padding-left:10px;
+    height: auto;
+}
 
 .comment-container-show {
     display: flex;
