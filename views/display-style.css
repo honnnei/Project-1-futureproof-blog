@@ -70,6 +70,7 @@ footer {
     border:2px solid grey;
     border-radius:10px;
     margin:10px;
+    
 }
 
 .post_date {
@@ -129,7 +130,6 @@ footer {
 
 .comment_username{
     display:flex;
-    width: 98%;
     font-size:20px;
     padding-left:20px;
     background-color:lightblue;
