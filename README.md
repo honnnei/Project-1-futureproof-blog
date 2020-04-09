@@ -28,6 +28,7 @@
 
 ### What I/we would do differently next time
 - use TDD
+- Create a design template for consistent colouring and styling.
 
 # Extra Feature Ideas:
 - charcter counter
