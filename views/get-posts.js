@@ -75,9 +75,9 @@ $(document).ready(function () {
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
                                 <label for = "usernamebox">Username</label>
-                                <input name="commentUsername" type="text" class="usernamebox"/>
+                                <input value="Anonymous" required name="commentUsername" type="text" class="usernamebox"/>
                                 <label for = "commentbox">Comment here</label>
-                                <input name="commentContent" type="textarea" class="commentbox"/>
+                                <input required name="commentContent" type="textarea" class="commentbox"/>
 
                                 <button type = "submit" class="submit">Submit</button>
                             </form>
@@ -141,9 +141,9 @@ $(document).ready(function () {
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
                                 <label for = "usernamebox">Username</label>
-                                <input name="commentUsername" type="text" class="usernamebox"/>
+                                <input value="Anonymous" required name="commentUsername" type="text" class="usernamebox"/>
                                 <label for = "commentbox">Comment here</label>
-                                <input name="commentContent" type="textarea" class="commentbox"/>
+                                <input required name="commentContent" type="textarea" class="commentbox"/>
                                 <button type = "submit" class="submit">Submit</button>
                             </form>
                         </div>
