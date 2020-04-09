@@ -214,4 +214,5 @@ function displayEmojiReacts(index) {
 //     $(".collapse_button").click(function() {
 //         $(".comment_section").toggle();
 //     });  
-// }
+
+});
