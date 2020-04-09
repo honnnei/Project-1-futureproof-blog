@@ -85,7 +85,9 @@ $(document).ready(function () {
                         <div class="user_post_image">
                             <div class="user_post"></div>
                         </div>
-                        <button class="comment">Comment</button>
+                        <div class="comment_and_emojis">
+                            <button class="comment">Comment</button>
+                        </div>
                         <div class="form_div">
                             <form action="/comment/${id}" method="POST" class="comment-container">
                                 <label for = "usernamebox">Username</label>
