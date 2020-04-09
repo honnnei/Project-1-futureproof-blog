@@ -8,9 +8,13 @@
 4. npm start / node app.js
 5. open the local host in browser (the terminal will tell you the port number)
 
-### What We have learned
+### How we distributed our work:
+Day 1 - creating a server, creating new posts and saving them into storage.json. Adding styling.
+Day 2 - creating comments, saving them into storage.json, also creating a giphy option. Adding styling.
+Day 3 - mergin the blog app with the giphy option. Creating emoji reactions. Creating a date stamp, character limit alert and character counter. Adding styling.
+Day 4 - Refactoring & adding more styling.
 
-
+### What We Learned:
 
 # Challenges we overcame:
 - adding a comment array element to each post object so that we can add multiple comments
@@ -21,12 +25,11 @@
 - refactoring the date stamp to a different time zone 
 
 # What we struggled with:
-- Storing the emoji reactions 
+- Storing the emoji reactions.
 - Displaying posts in chronological order. Instead posts are displayed as their image is loaded.
 - Making the comment input box expandable to more lines of text if longer text is added. 
 
-
-### What I/we would do differently next time
+### What we would do differently next time:
 - use TDD
 
 # Extra Feature Ideas:
