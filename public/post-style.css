@@ -3,7 +3,7 @@ body {
     padding:0;
     display:flex;
     flex-direction:column;
-    min-height:100%;
+    height:100%;
     width:100%;
     background-color: lightblue;
     /* border:2px black solid; */
@@ -59,39 +59,19 @@ footer {
     justify-self:center;
     align-self:center;
     justify-content:center;
-    /* border:2px red solid; */
 }
 
-/*Uncomment these headings for inverted colours*/
-
-/* h1{
-    font-size:2.5rem;
-    font-family: 'Pacifico', cursive;
-    color:black;
-    text-shadow: -3px 0 lightpink, 0 3px lightpink, 3px 0 lightpink, 0 -3px lightpink;
-}
-
-h2{
-    margin-bottom:8px;
-    font-size:30px;
-    color: black;
-    text-align:center;
-    margin-bottom:15px;
-    font-family: 'Pacifico', cursive;
-    color:black;
-    text-shadow: -3px 0 lightpink, 0 3px lightpink, 3px 0 lightpink, 0 -3px lightpink;
-} */
 
 h1{
-    font-size:2.5rem;
+    font-size:3rem;
     font-family: 'Pacifico', cursive;
     color:lightpink;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
 
  h2{
     margin-bottom:8px;
-    font-size:30px;
+    font-size:2.5rem;
     color: black;
     text-align:center;
     margin-bottom:15px;
@@ -105,11 +85,10 @@ h1{
 article{
     display:flex;
     margin-top:5%;
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
     width:30%;
     flex-direction:column;
     align-self:center;
-    /* border:2px red solid; */
 }
 
 form {
@@ -117,8 +96,6 @@ form {
     flex-direction: column;
     padding:10px;
     background-color:lightpink;
-    /* border:8px solid salmon; */
-    /* border:8px solid lightgrey; */
     border:2px solid grey;
     border-radius:10px;
     box-shadow: 10px 10px 5px grey;
@@ -169,7 +146,6 @@ form {
 
     padding:10px;
     border-radius:10px;
-    /* background-color:salmon; */
     background-color:lightpink;
     
     
