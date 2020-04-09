@@ -36,13 +36,88 @@ app.post('/', (req, res) => {
         obj = JSON.parse(data); //now it an object
         let commentArray = [];
         //adding a date stamp:
-        var thisDate = new Date();
-        var day = thisDate.getDate();
-        var month = thisDate.getMonth() + 1;
-        var year = thisDate.getFullYear();
-        if (month < 10) month = "0" + month;
-        if (day < 10) day = "0" + day;
-        var today = year + "-" + month + "-" + day;
+        
+                var thisDate = new Date();
+                var thisTime = thisDate. getTime()
+                var thisDay = thisDate.getDay();
+                console.log(thisDate);
+                console.log(thisTime);
+                console.log(thisDay);
+                let dayOfWeek = "";
+                //getting day of the week
+                switch (thisDate.getDay()) {
+                    case 0:
+                      dayOfWeek = "Sunday";
+                      break;
+                    case 1:
+                        dayOfWeek = "Monday";
+                      break;
+                    case 2:
+                        dayOfWeek = "Tuesday";
+                      break;
+                    case 3:
+                        dayOfWeek = "Wednesday";
+                      break;
+                    case 4:
+                        dayOfWeek = "Thursday";
+                      break;
+                    case 5:
+                        dayOfWeek = "Friday";
+                      break;
+                    case 6:
+                        dayOfWeek = "Saturday";
+                  }
+                let month = "";
+                  //getting the month name
+                switch (thisDate.getMonth()) {
+                    case 0:
+                      month = "January";
+                      break;
+                    case 1:
+                        month = "February";
+                      break;
+                    case 2:
+                        month = "March";
+                      break;
+                    case 3:
+                        month = "April";
+                      break;
+                    case 4:
+                        month = "May";
+                      break;
+                    case 5:
+                        month = "June";
+                      break;
+                    case 6:
+                        month = "July";
+                    case 7:
+                         month = "August";
+                      break;
+                    case 8:
+                        month = "September";
+                      break;
+                    case 9:
+                        dayOfWeek = "October";
+                      break;
+                    case 10:
+                        dayOfWeek = "November";
+                      break;
+                    case 11:
+                        dayOfWeek = "December";
+                      break;
+                  }
+                //getting the time stamp:
+                    var hours = thisDate.getHours();
+                    var minutes = thisDate.getMinutes();
+                    var ampm = hours >= 12 ? 'PM' : 'AM';
+                    hours = hours % 12;
+                    hours = hours ? hours : 12; // the hour '0' should be '12'
+                    minutes = minutes < 10 ? '0'+minutes : minutes;
+                    var strTime = hours + ':' + minutes + ' ' + ampm;
+                //fb format: Monday April 5 at 9:04 PM
+                var day = thisDate.getDate();
+                var year = thisDate.getFullYear();
+                var today = `${dayOfWeek} ${month} ${day} at ${strTime}`;
         formData.date = today;
         //adding an array for comments:
         formData.comments = commentArray;
