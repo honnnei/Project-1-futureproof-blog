@@ -126,7 +126,7 @@ app.post('/', (req, res) => {
     // console.log(obj);
     //let writeData = JSON.stringify(formData);
     //fs.appendFileSync('./storage.json', writeData);
-    res.redirect('/new-entry'); 
+    res.redirect('/blog-feed'); 
 }); 
 
 // //creating a new comment:
@@ -155,7 +155,7 @@ app.post('/comment/:postIndex', (req, res) => {
         json = JSON.stringify(commentObj); //convert it back to json
         fs.writeFileSync('storage.json', json); // write it back 
     }});
-    res.redirect('/new-entry');
+    res.redirect('/blog-feed');
 });
 
     // // console.log(commentData);
@@ -167,7 +167,7 @@ app.post('/comment/:postIndex', (req, res) => {
 
 //use this to transfer data from my form to the json object. there should be a redirect in this route to prevent resubmission.
 
-app.get('/new-entry', (req, res) => {
+app.get('/blog-feed', (req, res) => {
     let rawData = fs.readFileSync('./storage.json');
     let output = JSON.parse(rawData);
     console.log(output);
