@@ -173,46 +173,40 @@ $(document).ready(function () {
 
     }
 
-  //DELETED A FEW BRACKETS HERE IN THE MERGE
+    function displayEmojiReacts(index) {
+        let id = index.toString();
+        let bigEmojiDiv = "emoji"+id
+        let laughCount = 0;
+        let neutralCount = 0;
+        let poopCount = 0;
 
-function displayEmojiReacts(index) {
-    let id = index.toString();
-    let bigEmojiDiv = "emoji"+id
-    let laughCount = 0;
-    let neutralCount = 0;
-    let poopCount = 0;
+        $(`#${id} .comment_and_emojis`).append(`<div id=${bigEmojiDiv} class="emojicontainer"></div>`);
+            $(`#${bigEmojiDiv}`).append(`<div id=group1${id} class="emojigroup"></div>`);
+                $(`#group1${id}`).append(`<div id=laughing${id} class="laughing">🤣</div>`);
+                $(`#group1${id}`).append(`<div id=laughingCounter${id} class="counter">0</div>`);
+                $(`#laughing${id}`).click(function() {
+                    laughCount += 1;
+                    $(`#laughingCounter${id}`).html(`${laughCount}`);
+                });
+            
 
-    $(`#${id} .comment_and_emojis`).append(`<div id=${bigEmojiDiv} class="emojicontainer"></div>`);
-        $(`#${bigEmojiDiv}`).append(`<div id=group1${id} class="emojigroup"></div>`);
-            $(`#group1${id}`).append(`<div id=laughing${id} class="laughing">🤣</div>`);
-            $(`#group1${id}`).append(`<div id=laughingCounter${id} class="counter">0</div>`);
-            $(`#laughing${id}`).click(function() {
-                laughCount += 1;
-                $(`#laughingCounter${id}`).html(`${laughCount}`);
-            });
-        
+            $(`#${bigEmojiDiv}`).append(`<div id=group2${id} class="emojigroup"></div>`);
+                $(`#group2${id}`).append(`<div id=neutral${id} class="neutral">😑</div>`);
+                $(`#group2${id}`).append(`<div id=neutralCounter${id}  class="counter">0</div>`);
+                $(`#neutral${id}`).click(function() {
+                    neutralCount += 1;
+                    $(`#neutralCounter${id}`).html(`${neutralCount}`);
+                });
 
-        $(`#${bigEmojiDiv}`).append(`<div id=group2${id} class="emojigroup"></div>`);
-            $(`#group2${id}`).append(`<div id=neutral${id} class="neutral">😑</div>`);
-            $(`#group2${id}`).append(`<div id=neutralCounter${id}  class="counter">0</div>`);
-            $(`#neutral${id}`).click(function() {
-                neutralCount += 1;
-                $(`#neutralCounter${id}`).html(`${neutralCount}`);
-            });
+            $(`#${bigEmojiDiv}`).append(`<div id=group3${id} class="emojigroup"></div>`);
+                $(`#group3${id}`).append(`<div id=poop${id} class="poop">💩</div>`);
+                $(`#group3${id}`).append(`<div id=poopCounter${id} class="counter">0</div>`);
+                $(`#poop${id}`).click(function() {
+                    poopCount += 1;
+                    $(`#poopCounter${id}`).html(`${poopCount}`);
+                });
 
-        $(`#${bigEmojiDiv}`).append(`<div id=group3${id} class="emojigroup"></div>`);
-            $(`#group3${id}`).append(`<div id=poop${id} class="poop">💩</div>`);
-            $(`#group3${id}`).append(`<div id=poopCounter${id} class="counter">0</div>`);
-            $(`#poop${id}`).click(function() {
-                poopCount += 1;
-                $(`#poopCounter${id}`).html(`${poopCount}`);
-            });
+    }
 
-}
-
-// function collapseComments() {
-//     $(".collapse_button").click(function() {
-//         $(".comment_section").toggle();
-//     });  
 
 });
