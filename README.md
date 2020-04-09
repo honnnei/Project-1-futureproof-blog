@@ -25,5 +25,7 @@ o	id
 - adding a comment array element to each post object so that we can add multiple comments
 - mapping the post array, then fetching giffy if necessary, then runnig the post display functions that map the comments array
 - obtaining the giphy url - we fixed it with adding an additional .then
+- getting the function with the emoji counter to work so that it counts each individual emoji separately
 
 # What we struggled with:
+- Storing the emoji reactions 
