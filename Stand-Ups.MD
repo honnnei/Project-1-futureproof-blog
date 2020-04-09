@@ -46,3 +46,25 @@
 ### 1) Fixed giphy and working on display / styling
 ### 2) Work on styling and making giphy work
 ### 3) No blockers.
+
+# Stand-Up 3 (Thursday)
+
+# Rosie
+### 1) Failed to do emoji counter, added some more styling.
+### 2) Working on styling, maybe add some small interactive features.
+### 3) 
+
+# Hanna
+### 1) We made giphy work again, added a character counter, character limit alert, failed to save emojis.
+### 2) Refactor the date to display the day and time.
+### 3)
+
+# Keir
+### 1) Tried to get the emojis working yesterday.
+### 2) Working on more styling.
+### 3) 
+
+# Matt 
+### 1) We made giphy work again, added more styling.
+### 2) Maybe styling the date today.
+### 3) 
