@@ -49,12 +49,13 @@
                 // alert('you have reached a limit of 100'); 
                 $("#characterAlert").hide();
             }
-        });
-
-        $( "#blogPost" ).on('input', function() {
             let charactersCounter = $(this).val().length;
             $("#numberOfCharacters").html(`${charactersCounter}`);
         });
+
+        // $( "#blogPost" ).on('input', function() {
+            
+        // });
     </script>
 </body>
 </html>
