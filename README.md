@@ -15,6 +15,10 @@ Day 3 - mergin the blog app with the giphy option. Creating emoji reactions. Cre
 Day 4 - Refactoring & adding more styling.
 
 ### What We Learned:
+- how to save data into a json file
+- how to retrieve data from a json file
+- how to add additional data into an object which already exists in our json storage
+- how to create a Date stamp with JS new Date object.
 
 # Challenges we overcame:
 - adding a comment array element to each post object so that we can add multiple comments
@@ -22,7 +26,7 @@ Day 4 - Refactoring & adding more styling.
 - obtaining the giphy url - we fixed it with adding an additional .then
 - getting the function with the emoji counter to work so that it counts each individual emoji separately
 - Finding a suitable service to host our website. And formatting our code so that it could be run online.
-- refactoring the date stamp to a different time zone 
+- Refactoring the date stamp to a different time zone and display format
 
 # What we struggled with:
 - Storing the emoji reactions.

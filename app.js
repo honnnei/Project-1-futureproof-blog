@@ -39,7 +39,7 @@ app.post('/', (req, res) => {
         
                 var thisDate = new Date();
                 var day = thisDate.getDate();
-                var ukTime= (thisDate.getTimezoneOffset() + 60) / 60;
+                var ukTime= (thisDate.getTimezoneOffset() + 60) / 60; //getting the difference of hours btw the users time zone and UK time GMT + 1
                 let dayOfWeek = "";
                 //getting day of the week
                 switch (thisDate.getDay()) {
