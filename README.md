@@ -1,28 +1,16 @@
 # blog-project
 ## Rosie Keir Matt Hanna
 
-### PLAN:
--	server
-o	app.js
-o	Post HTML
-	script.js
-o	Display HTML
-	script.js
-o	json storage file
--	Post HTML
-o	username input
-o	post input
-o	id
-	comments
-	gifs
-	emojis
+# How to run our app:
+1. Fork over the repository 
+2. npm init
+3. npm install --save express if express not installed
+4. npm start / node app.js
+5. open the local host in browser (the terminal will tell you the port number)
 
-# Extra Feature Ideas:
-- charcter counter
-- once your post goes over the character limit - give the user an alert
-- date stamp
-- comment section icon
-- comment user icon
+### What We have learned
+
+
 
 # Challenges we overcame:
 - adding a comment array element to each post object so that we can add multiple comments
@@ -36,3 +24,15 @@ o	id
 - Storing the emoji reactions 
 - Displaying posts in chronological order. Instead posts are displayed as their image is loaded.
 - Making the comment input box expandable to more lines of text if longer text is added. 
+
+
+### What I/we would do differently next time
+- use TDD
+
+# Extra Feature Ideas:
+- charcter counter
+- once your post goes over the character limit - give the user an alert
+- date stamp
+- comment section icon
+- comment user icon
+- expandable comment input box (not implemented)

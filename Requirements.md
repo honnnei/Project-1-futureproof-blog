@@ -26,3 +26,10 @@ v done
 - character limit alert
 - comment section icon
 - comment user icon
+
+# Do a presentation on your project in the following format:
+Slide 1 - Placeholder / Team info/name etc
+Slide 2 - Approach taken
+Slide 3 - Technology used
+Slide 4 - Challenges
+Slide 5 - Solutions and Learning points
