@@ -26,6 +26,8 @@ o	id
 - mapping the post array, then fetching giffy if necessary, then runnig the post display functions that map the comments array
 - obtaining the giphy url - we fixed it with adding an additional .then
 - getting the function with the emoji counter to work so that it counts each individual emoji separately
+- Finding a suitable service to host our website. And formatting our code so that it could be run online.
 
 # What we struggled with:
 - Storing the emoji reactions 
+- Displaying posts in chronological order. Instead posts are displayed as their image is loaded.
