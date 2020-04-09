@@ -50,3 +50,29 @@ Day 4 - Refactoring, extra features & adding more styling.
 - comment user icon
 - unique user avatar and permanent user handle (would probably need a database, not implemented)
 - expandable comment input box (not implemented)
+
+# RETRO:
+# Peaks of the week:
+- getting our app to work
+- good speed 
+- good integration of features & branches
+- working on different features and with different people in pairs
+
+# Pits:
+- (not) storing the emojis
+
+# Difficulties:
+- planning & delegating tasks
+
+# Random thoughts:
+- even though we didn't design our UI it turned out really nice and we're proud of it ;)
+
+# What we've achieved as a team:
+- good cooperation on Github
+- good team work and team communication
+- very good timing
+- learnt how to use git branches and do pull requests
+
+# What we would have done differently:
+- do more thinking/planning for the backend - frontend integration and the way of sending data
+
