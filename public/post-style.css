@@ -105,6 +105,7 @@ h1{
 article{
     display:flex;
     margin-top:5%;
+    margin-bottom: 10%;
     width:30%;
     flex-direction:column;
     align-self:center;
