@@ -97,6 +97,7 @@ $(document).ready(function () {
                             </form>
                         </div>
                     </div>
+                    <button type="button" class="collapse_button">Show Comments</button>
                     <div class="comment_section"></div>
                 </div>`);
         $(`#${id} .post_date`).html(`${arrayDate}`);
@@ -105,6 +106,10 @@ $(document).ready(function () {
         $(`#${id} .comment`).on('click', function () {
             $(`#${id} .form_div`).toggle();
         });
+        $(`#${id} .collapse_button`).on('click', function () {
+            $(`#${id} .comment_section`).toggle();
+        });
+        
         if(arrayImage){
             console.log(arrayImage);
             $(`#${id} .user_post_image`).append(`<div class="user_image"></div>`);
@@ -185,9 +190,10 @@ $(document).ready(function () {
         }
 
     }
-
-});
+    
+    })
   
+
 // function makeAGiphy(query) {
 //             let imageSource = "";
 //                 let key = "nNH7998Ir4ao8g1OTRrIQxqYr1EomuJO"
@@ -265,3 +271,9 @@ function displayEmojiReacts(index) {
             });
 
 }
+
+// function collapseComments() {
+//     $(".collapse_button").click(function() {
+//         $(".comment_section").toggle();
+//     });  
+// }

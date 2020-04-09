@@ -128,15 +128,36 @@ footer {
 
 /* 2 form classes below: */
 
-.comment_section{
+.collapse_button {
+        margin:8px;
+        display:flex;
+        align-self:center;
+        text-align:center;
+        border: 0.1em solid white;
+        border-radius: 3px;
+        background-color: lightgrey;
+        color: black;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: 14px;
+        text-decoration: none;
+        transition: 0.4s;
+    }
     
-    /* border: 1px solid black; */
+.collapse_button:hover {
+        background-color: lightblue;
+        color: black;
+    /* =======
+        margin-top:8px;
+        display: inline-flex;
+        width:15%;
+        align-self:center;
+        text-align:center;
+        /* margin-right: 35%; */
 }
 
-/* .comment_container{ */
-    /* border: 1px solid grey; */
-    /* background-color:white;
-} */
+.comment_section {
+    display: none;
+}
 
 .comment_username{
     display:flex;
