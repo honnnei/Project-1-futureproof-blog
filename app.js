@@ -121,11 +121,6 @@ app.post('/', (req, res) => {
         json = JSON.stringify(obj); //convert it back to json
         fs.writeFileSync('storage.json', json); // write it back 
     }});
-
-    // console.log(formData);
-    // console.log(obj);
-    //let writeData = JSON.stringify(formData);
-    //fs.appendFileSync('./storage.json', writeData);
     res.redirect('/blog-feed'); 
 }); 
 
@@ -142,28 +137,17 @@ app.post('/comment/:postIndex', (req, res) => {
         if (err){
             console.log(err);
         } else {
-        // commentObj = JSON.parse(data); 
-        // commentObj.posts[postArrayIndex].comments = commentData;
-        // console.log(commentObj.posts[postArrayIndex].comments);
-        // let commentArray = [];
+     
         commentObj = JSON.parse(data); 
-        // commentObj.posts[postArrayIndex].comments = commentArray;
         commentObj.posts[postArrayIndex].comments.push(commentData);
         console.log(commentObj.posts[postArrayIndex].comments);
         
-        // //now it an object
+        // //now it is an object
         json = JSON.stringify(commentObj); //convert it back to json
         fs.writeFileSync('storage.json', json); // write it back 
     }});
     res.redirect('/blog-feed');
 });
-
-    // // console.log(commentData);
-    // console.log(obj);
-    // //let writeData = JSON.stringify(formData);
-    // //fs.appendFileSync('./storage.json', writeData);
-    // res.redirect('/new-entry'); 
- 
 
 //use this to transfer data from my form to the json object. there should be a redirect in this route to prevent resubmission.
 
