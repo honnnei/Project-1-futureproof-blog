@@ -27,6 +27,7 @@ Day 4 - Refactoring & adding more styling.
 - getting the function with the emoji counter to work so that it counts each individual emoji separately
 - Finding a suitable service to host our website. And formatting our code so that it could be run online.
 - Refactoring the date stamp to a different time zone and display format
+- Creating a clear and intuitive UI, by using familiar layouts and labelling, and minimising cluttered layout
 
 # What we struggled with:
 - Storing the emoji reactions.
