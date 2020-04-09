@@ -261,14 +261,16 @@ padding: 5px;
     /* margin-right: 35%; */
 }
 
-.emojicontainer {
-    display: inline-flex;
-    /* margin-left: 35%; */
-}
-
 .comment_and_emojis {
     display: flex;
     justify-content: space-between;
+    
+}
+
+.emojicontainer {
+    display: inline-flex;
+    padding: 1px;
+    margin: 1px;
     
 }
 
@@ -276,15 +278,10 @@ padding: 5px;
     padding: 1px;
     margin: 1px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 20%;
-}
-
-.emojigroup {
-    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    /* width: 20%; */
 }
 
 .commentbox {

@@ -10,15 +10,26 @@ v done
 # Users should be able to view other peoples' entries.
 v done
 # Users should be able to react to other peoples’ entries with an emoji.
-being done
+V done (but reactions not saved to storage.json :( )
 # Users should have three emojis to choose from
-being done
+V done
 # Users should be able to comment on other people’s entries.
 v done
 # Your website should have the following technical functionality:
 # Your website should be hosted via github pages or similar
-to do!
+V done
 # Your website should not have a database connected, instead any data sent and stored in your backend should be saved within .json files.
 v done
 # Extra features:
 - date stamp
+- character counter
+- character limit alert
+- comment section icon
+- comment user icon
+
+# Do a presentation on your project in the following format:
+Slide 1 - Placeholder / Team info/name etc
+Slide 2 - Approach taken
+Slide 3 - Technology used
+Slide 4 - Challenges
+Slide 5 - Solutions and Learning points
