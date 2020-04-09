@@ -38,11 +38,8 @@ app.post('/', (req, res) => {
         //adding a date stamp:
         
                 var thisDate = new Date();
-                var thisTime = thisDate. getTime()
-                var thisDay = thisDate.getDay();
-                console.log(thisDate);
-                console.log(thisTime);
-                console.log(thisDay);
+                var day = thisDate.getDate();
+                var ukTime= (thisDate.getTimezoneOffset() + 60) / 60;
                 let dayOfWeek = "";
                 //getting day of the week
                 switch (thisDate.getDay()) {
@@ -107,17 +104,16 @@ app.post('/', (req, res) => {
                       break;
                   }
                 //getting the time stamp:
-                    var hours = thisDate.getHours();
+                    var hours = thisDate.getHours() + ukTime; //offetting the local hours for GMT +1
                     var minutes = thisDate.getMinutes();
                     var ampm = hours >= 12 ? 'PM' : 'AM';
                     hours = hours % 12;
                     hours = hours ? hours : 12; // the hour '0' should be '12'
                     minutes = minutes < 10 ? '0'+minutes : minutes;
                     var strTime = hours + ':' + minutes + ' ' + ampm;
-                //fb format: Monday April 5 at 9:04 PM
-                var day = thisDate.getDate();
-                var year = thisDate.getFullYear();
-                var today = `${dayOfWeek} ${month} ${day} at ${strTime}`;
+                //putting the date stamp together:
+                var today = `${dayOfWeek} ${month} ${day} at ${strTime} (GMT +1)`;
+        //addidint a date stamp to the post object:
         formData.date = today;
         //adding an array for comments:
         formData.comments = commentArray;
