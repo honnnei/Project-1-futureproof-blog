@@ -6,8 +6,6 @@ body {
     height:100%;
     width:100%;
     background-color: lightblue;
-    /* border:2px black solid; */
-    /* font-family: 'Roboto', sans-serif; */
     font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -28,22 +26,18 @@ header {
     height: 150px;
 }
 
-.logo{
+.logo {
     display:flex;
 }
 
 nav {
     display:flex;
-    /* width:100%; */
-    /* background-color:grey; */
     background-color:lightblue;
-    /* min-height: 100px; */
     width: 300px;
     justify-content: space-around;
     align-items: center;
     margin:0;
     padding:0;
-    /* border:2px red solid; */
 }
 
 footer {
@@ -154,10 +148,8 @@ form {
 #postSubmitButton:hover{
     padding:10px;
     border-radius:10px;
-    
     background-color:rgb(233, 163, 173);
-
-    cursor:pointer;
+    cursor: pointer;
 }
 
 textarea{
