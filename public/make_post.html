@@ -41,12 +41,10 @@
     <script>
         $( "#blogPost" ).on('input', function() {
             if ($(this).val().length>=100) {
-                // alert('you have reached a limit of 100'); 
                 $("#characterAlert").show();
                 $("#characterAlert").css("display", "flex");
             }
             if ($(this).val().length<100) {
-                // alert('you have reached a limit of 100'); 
                 $("#characterAlert").hide();
             }
             let charactersCounter = $(this).val().length;
