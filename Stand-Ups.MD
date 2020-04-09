@@ -65,6 +65,6 @@
 ### 3) 
 
 # Matt 
-### 1) We made giphy work again, added more styling.
+### 1) We made giphy work again, added more styling. Hosted project on Heroku.com
 ### 2) Maybe styling the date today.
 ### 3) 
