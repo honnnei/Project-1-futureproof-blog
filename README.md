@@ -12,12 +12,13 @@
 Day 1 - creating a server, creating new posts and saving them into storage.json. Adding styling.
 Day 2 - creating comments, saving them into storage.json, also creating a giphy option. Adding styling.
 Day 3 - mergin the blog app with the giphy option. Creating emoji reactions. Creating a date stamp, character limit alert and character counter. Adding styling.
-Day 4 - Refactoring & adding more styling.
+Day 4 - Refactoring, extra features & adding more styling.
 
 ### What We Learned:
 - how to save data into a json file
 - how to retrieve data from a json file
 - how to add additional data into an object which already exists in our json storage
+- creating responsive sites with jquery
 - how to create a Date stamp with JS new Date object.
 
 # Challenges we overcame:
@@ -37,6 +38,9 @@ Day 4 - Refactoring & adding more styling.
 ### What we would do differently next time:
 - use TDD
 - Create a design template for consistent colouring and styling.
+- make use of frontend frameworks if necessary
+- refactor json object initialization to carry all the required data types immediately
+- integrate emoji reaction display function into the display comment function
 
 # Extra Feature Ideas:
 - charcter counter
@@ -44,4 +48,5 @@ Day 4 - Refactoring & adding more styling.
 - date stamp
 - comment section icon
 - comment user icon
+- unique user avatar and permanent user handle (would probably need a database, not implemented)
 - expandable comment input box (not implemented)

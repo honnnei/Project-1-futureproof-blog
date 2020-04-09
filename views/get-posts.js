@@ -173,7 +173,7 @@ $(document).ready(function () {
 
     }
 
-  //DELETED A FEW BRACKETS HERE IN TEH MERGE
+  //DELETED A FEW BRACKETS HERE IN THE MERGE
 
 function displayEmojiReacts(index) {
     let id = index.toString();
